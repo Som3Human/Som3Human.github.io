@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Folder with MP3 Files</title>
+</head>
+<body>
+    <h1>Upload Folder with MP3 Files</h1>
+    <input type="file" id="folderInput" webkitdirectory mozdirectory directory multiple>
+    <button onclick="uploadFolder()">Upload</button>
+    
+    <h2>Random MP3</h2>
+    <button onclick="playRandom()">Play Random MP3</button>
+
+    <label for="fileName">Enter File Name:</label>
+    <input type="text" id="fileName">
+    <button onclick="submitName()">Submit</button>
+
+    <audio controls id="audioPlayer">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const filesArray = [];
+        let currentIndex = -1;
+
+        function uploadFolder() {
+            const folderInput = document.getElementById('folderInput');
+            const files = folderInput.files;
+
+            // No server-side processing, as it's only one HTML file
+            // Simulate uploading by storing files locally
+            filesArray.length = 0;
+            for (const file of files) {
+                filesArray.push(file);
+            }
+            alert('Folder uploaded successfully');
+        }
+
+        function playRandom() {
+            const audioPlayer = document.getElementById('audioPlayer');
+            if (filesArray.length === 0) {
+                alert('No files uploaded');
+                return;
+            }
+
+            currentIndex = Math.floor(Math.random() * filesArray.length);
+            const randomFile = filesArray[currentIndex];
+            audioPlayer.src = URL.createObjectURL(randomFile);
+            audioPlayer.play();
+        }
+
+        function submitName() {
+            const fileNameInput = document.getElementById('fileName');
+            const fileName = fileNameInput.value.trim();
+            if (fileName === '') {
+                alert('Please enter a file name');
+                return;
+            }
+            if (filesArray.length === 0) {
+                alert('No files uploaded');
+                return;
+            }
+
+            const file = filesArray.find(f => f.name.toLowerCase() === fileName.toLowerCase());
+            if (file) {
+                const correctName = file.name.replace('.mp3', ''); // Remove .mp3 extension
+                alert(`You entered: ${fileName}, the correct name was: ${correctName}`);
+            } else {
+                const audioPlayer = document.getElementById('audioPlayer');
+                const currentFileIndex = currentIndex !== -1 ? currentIndex : Math.floor(Math.random() * filesArray.length);
+                const currentFile = filesArray[currentFileIndex];
+                alert(`You entered: ${fileName}, the correct name is: ${currentFile.name.replace('.mp3', '')}`);
+            }
+            fileNameInput.value = ''; // Clear the input box after submission
+        }
+    </script>
+</body>
+</html>
