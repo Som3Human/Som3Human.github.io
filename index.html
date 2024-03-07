@@ -64,15 +64,8 @@
             }
 
             const file = filesArray.find(f => f.name.toLowerCase() === fileName.toLowerCase());
-            if (file) {
                 const correctName = file.name.replace('.mp3', ''); // Remove .mp3 extension
                 alert(`You entered: ${fileName}, the correct name was: ${correctName}`);
-            } else {
-                const audioPlayer = document.getElementById('audioPlayer');
-                const currentFileIndex = currentIndex !== -1 ? currentIndex : Math.floor(Math.random() * filesArray.length);
-                const currentFile = filesArray[currentFileIndex];
-                alert('${currentFile.name.replace('.mp3', '')}`);
-            }
             fileNameInput.value = ''; // Clear the input box after submission
         }
     </script>
