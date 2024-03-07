@@ -71,7 +71,7 @@
                 const audioPlayer = document.getElementById('audioPlayer');
                 const currentFileIndex = currentIndex !== -1 ? currentIndex : Math.floor(Math.random() * filesArray.length);
                 const currentFile = filesArray[currentFileIndex];
-                alert${currentFile.name.replace('.mp3', '')}`);
+                alert('${currentFile.name.replace('.mp3', '')}`);
             }
             fileNameInput.value = ''; // Clear the input box after submission
         }
