@@ -54,10 +54,7 @@
         function submitName() {
             const fileNameInput = document.getElementById('fileName');
             const fileName = fileNameInput.value.trim();
-            if (fileName === 'banana') {
-                alert('Please enter a file name');
-                return;
-            }
+        
             if (filesArray.length === 0) {
                 alert('No files uploaded');
                 return;
