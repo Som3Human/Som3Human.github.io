@@ -82,17 +82,14 @@
         let musicFiles = [];
 
         async function initialize() {
-    try {
-        const response = await fetch('music.json');
-        const data = await response.json();
-        console.log('Fetched data:', data); // Log the fetched data
-        musicFiles = data.musicFiles;
-        console.log('Music files:', musicFiles); // Log the music files array
-    } catch (error) {
-        console.error('Error fetching music files:', error);
-    }
-}
-
+            try {
+                const response = await fetch('music.json');
+                const data = await response.json();
+                musicFiles = data.musicFiles;
+            } catch (error) {
+                console.error('Error fetching music files:', error);
+            }
+        }
 
         async function playRandom() {
             const audioPlayer = document.getElementById('audioPlayer');
@@ -111,36 +108,37 @@
         }
 
         async function submitName() {
-    const fileNameInput = document.getElementById('fileName');
-    const fileName = fileNameInput.value.trim();
+            const fileNameInput = document.getElementById('fileName');
+            const fileName = fileNameInput.value.trim();
 
-    if (musicFiles.length === 0) {
-        showMessage('No music files available', 'error');
-        return;
-    }
+            if (musicFiles.length === 0) {
+                showMessage('No music files available', 'error');
+                return;
+            }
 
-    const normalizedFileName = fileName.toLowerCase().replace(/^music\/|\.mp3$/g, '');
-    const similarFile = findSimilarFileName(normalizedFileName);
-    if (similarFile) {
-        showMessage(`The correct name is '${similarFile}'`, 'error');
-    } else if (fileName === '') {
-        showMessage('Please enter a file name', 'error');
-    } else {
-        showMessage(`The file '${fileName}' does not exist`, 'error');
-    }
-    fileNameInput.value = ''; // Clear the input box after submission
-}
+            if (fileName === '') {
+                showMessage(`Please enter a file name. The correct name is '${musicFiles[0]}'`, 'error');
+                return;
+            }
 
-function findSimilarFileName(fileName) {
-    return musicFiles.find(file => file.toLowerCase().replace(/^music\/|\.mp3$/g, '') === fileName);
-}
+            const normalizedFileName = fileName.toLowerCase().replace(/\.mp3$/g, '');
+            const correctFile = musicFiles.find(file => file.toLowerCase().replace(/^music\//, '').replace(/\.mp3$/g, '') === normalizedFileName);
+            if (correctFile) {
+                showMessage('Correct!', 'success');
+            } else {
+                const similarFile = findSimilarFileName(normalizedFileName);
+                if (similarFile) {
+                    showMessage(`The correct name is '${similarFile}'. You entered '${fileName}'.`, 'error');
+                } else {
+                    showMessage(`The file '${fileName}' does not exist`, 'error');
+                }
+            }
+            fileNameInput.value = ''; // Clear the input box after submission
+        }
 
-
-function findSimilarFileName(fileName) {
-    const normalizedFileName = fileName.toLowerCase();
-    return musicFiles.find(file => file.toLowerCase().includes(normalizedFileName));
-}
-
+        function findSimilarFileName(fileName) {
+            return musicFiles.find(file => file.toLowerCase().replace(/^music\//, '').replace(/\.mp3$/g, '').includes(fileName));
+        }
 
         function showMessage(message, type) {
             const messageContainer = document.getElementById('messageContainer');
