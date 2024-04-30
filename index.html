@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
+    <title>Upload Folder with MP3 Files</title>
     <style>
-        /* Your CSS styles here */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,6 +14,9 @@
         }
         h1, h2 {
             margin-top: 0;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
         }
         button {
             padding: 10px 20px;
@@ -61,8 +63,10 @@
     </style>
 </head>
 <body>
-    <h1>Music Player</h1>
-
+    <h1>Upload Folder with MP3 Files</h1>
+    <input type="file" id="folderInput" webkitdirectory mozdirectory directory multiple>
+    <button onclick="uploadFolder()">Upload</button>
+    
     <h2>Random MP3</h2>
     <button onclick="playRandom()">Play Random MP3</button>
 
@@ -79,56 +83,10 @@
     <div id="messageContainer"></div>
 
     <script>
-        let musicFiles = [];
-
-        async function initialize() {
-    try {
-        const response = await fetch('music.json');
-        const data = await response.json();
-        console.log('Fetched data:', data); // Log the fetched data
-        musicFiles = data.musicFiles;
-        console.log('Music files:', musicFiles); // Log the music files array
-    } catch (error) {
-        console.error('Error fetching music files:', error);
-    }
-}
-
-
-        async function playRandom() {
-            const audioPlayer = document.getElementById('audioPlayer');
-            const messageContainer = document.getElementById('messageContainer');
-            messageContainer.innerHTML = ''; // Clear previous messages
-
-            if (musicFiles.length === 0) {
-                showMessage('No music files available', 'error');
-                return;
-            }
-
-            const randomIndex = Math.floor(Math.random() * musicFiles.length);
-            const randomFile = musicFiles[randomIndex];
-            audioPlayer.src = randomFile;
-            audioPlayer.play();
-        }
-
-        async function submitName() {
-            const fileNameInput = document.getElementById('fileName');
-            const fileName = fileNameInput.value.trim();
-
-            if (musicFiles.length === 0) {
-                showMessage('No music files available', 'error');
-                return;
-            }
-
-            const currentFile = musicFiles.find(file => file.toLowerCase() === fileName.toLowerCase());
-            if (currentFile) {
-                showMessage('Correct!', 'success');
-            } else if (fileName === '') {
-                showMessage('Please enter a file name', 'error');
-            } else {
-                showMessage(`The file '${fileName}' does not exist`, 'error');
-            }
-            fileNameInput.value = ''; // Clear the input box after submission
-        }
+        const filesArray = [];
+        let currentIndex = -1;
+        let previousIndex = -1;
+        let incorrectMessageTimeout = null;
 
         function showMessage(message, type) {
             const messageContainer = document.getElementById('messageContainer');
@@ -147,7 +105,68 @@
             }
         }
 
-        window.addEventListener('DOMContentLoaded', initialize);
+        function uploadFolder() {
+            const folderInput = document.getElementById('folderInput');
+            const files = folderInput.files;
+
+            // No server-side processing, as it's only one HTML file
+            // Simulate uploading by storing files locally
+            filesArray.length = 0;
+            for (const file of files) {
+                filesArray.push(file);
+            }
+            showMessage('Folder uploaded successfully', 'success');
+        }
+
+        function playRandom() {
+            const audioPlayer = document.getElementById('audioPlayer');
+            showMessage('', ''); // Clear any previous message
+            if (filesArray.length === 0) {
+                showMessage('No files uploaded', 'error');
+                return;
+            }
+
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * filesArray.length);
+            } while (newIndex === currentIndex || newIndex === previousIndex);
+
+            previousIndex = currentIndex;
+            currentIndex = newIndex;
+
+            const randomFile = filesArray[currentIndex];
+            audioPlayer.src = URL.createObjectURL(randomFile);
+            audioPlayer.play();
+
+            // Clear any previous incorrect message timeout
+            clearTimeout(incorrectMessageTimeout);
+        }
+
+        function submitName() {
+            const fileNameInput = document.getElementById('fileName');
+            const fileName = fileNameInput.value.trim();
+            if (filesArray.length === 0) {
+                showMessage('No files uploaded', 'error');
+                return;
+            }
+
+            const audioPlayer = document.getElementById('audioPlayer');
+            const currentFile = filesArray[currentIndex];
+            const correctName = currentFile.name.replace('.mp3', ''); // Remove .mp3 extension
+
+            if (fileName.toLowerCase() === correctName.toLowerCase()) {
+                showMessage('Correct!', 'success');
+            } else if (fileName === '') {
+                showMessage(`The correct answer is: ${correctName}`, 'error');
+            } else {
+                showMessage(`The correct answer was: ${correctName}. You answered: ${fileName}`, 'error');
+                // Set a timeout to clear the incorrect message when a new song is played
+                incorrectMessageTimeout = setTimeout(() => {
+                    showMessage('', ''); // Empty message to clear the container
+                }, 7000);
+            }
+            fileNameInput.value = ''; // Clear the input box after submission
+        }
     </script>
 </body>
 </html>
