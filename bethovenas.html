@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        h1, h2 {
+            margin-top: 0;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+        label {
+            margin-right: 10px;
+        }
+        audio {
+            margin-top: 20px;
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+        }
+        .message {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .error {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Music Player</h1>
+
+    <h2>Random MP3</h2>
+    <button onclick="playRandom()">Play Random MP3</button>
+
+    <div>
+        <label for="fileName">Enter File Name:</label>
+        <input type="text" id="fileName">
+        <button onclick="submitName()">Submit</button>
+    </div>
+
+    <audio controls id="audioPlayer">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="messageContainer"></div>
+
+    <script>
+        let musicFiles = [];
+
+        async function initialize() {
+            try {
+                const response = await fetch('music.json');
+                const data = await response.json();
+                musicFiles = data.musicFiles.map(file => file.replace(/^music\//, '').replace(/\.mp3$/, ''));
+            } catch (error) {
+                console.error('Error fetching music files:', error);
+            }
+        }
+
+        async function playRandom() {
+            const audioPlayer = document.getElementById('audioPlayer');
+            const messageContainer = document.getElementById('messageContainer');
+            messageContainer.innerHTML = ''; // Clear previous messages
+
+            if (musicFiles.length === 0) {
+                showMessage('No music files available', 'error');
+                return;
+            }
+
+            const randomIndex = Math.floor(Math.random() * musicFiles.length);
+            const randomFile = musicFiles[randomIndex];
+            audioPlayer.src = `music/${randomFile}.mp3`;
+            audioPlayer.play();
+        }
+
+        async function submitName() {
+            const fileNameInput = document.getElementById('fileName');
+            const fileName = fileNameInput.value.trim();
+
+            if (musicFiles.length === 0) {
+                showMessage('No music files available', 'error');
+                return;
+            }
+
+            if (fileName === '') {
+                showMessage(`Please enter a file name. The correct name is '${musicFiles[0]}'`, 'error');
+                return;
+            }
+
+            const similarFile = findSimilarFileName(fileName);
+            if (similarFile) {
+                showMessage(`The correct name is '${similarFile}'. You entered '${fileName}'.`, 'error');
+            } else {
+                showMessage(`The file '${fileName}' does not exist`, 'error');
+            }
+            fileNameInput.value = ''; // Clear the input box after submission
+        }
+
+        function findSimilarFileName(fileName) {
+            const normalizedFileName = fileName.toLowerCase();
+            return musicFiles.find(file => file.toLowerCase() === normalizedFileName);
+        }
+
+        function showMessage(message, type) {
+            const messageContainer = document.getElementById('messageContainer');
+            messageContainer.innerHTML = ''; // Clear previous messages
+
+            if (message !== '') {
+                const div = document.createElement('div');
+                div.textContent = message;
+                div.classList.add('message');
+                if (type === 'success') {
+                    div.classList.add('success');
+                } else if (type === 'error') {
+                    div.classList.add('error');
+                }
+                messageContainer.appendChild(div);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', initialize);
+    </script>
+</body>
+</html>
