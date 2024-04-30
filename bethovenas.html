@@ -85,7 +85,7 @@
             try {
                 const response = await fetch('music.json');
                 const data = await response.json();
-                musicFiles = data.musicFiles;
+                musicFiles = data.musicFiles.map(file => file.replace(/^music\//, '').replace(/\.mp3$/, ''));
             } catch (error) {
                 console.error('Error fetching music files:', error);
             }
@@ -103,7 +103,7 @@
 
             const randomIndex = Math.floor(Math.random() * musicFiles.length);
             const randomFile = musicFiles[randomIndex];
-            audioPlayer.src = randomFile;
+            audioPlayer.src = `music/${randomFile}.mp3`;
             audioPlayer.play();
         }
 
@@ -121,23 +121,18 @@
                 return;
             }
 
-            const normalizedFileName = fileName.toLowerCase().replace(/\.mp3$/g, '');
-            const correctFile = musicFiles.find(file => file.toLowerCase().replace(/^music\//, '').replace(/\.mp3$/g, '') === normalizedFileName);
-            if (correctFile) {
-                showMessage('Correct!', 'success');
+            const similarFile = findSimilarFileName(fileName);
+            if (similarFile) {
+                showMessage(`The correct name is '${similarFile}'. You entered '${fileName}'.`, 'error');
             } else {
-                const similarFile = findSimilarFileName(normalizedFileName);
-                if (similarFile) {
-                    showMessage(`The correct name is '${similarFile}'. You entered '${fileName}'.`, 'error');
-                } else {
-                    showMessage(`The file '${fileName}' does not exist`, 'error');
-                }
+                showMessage(`The file '${fileName}' does not exist`, 'error');
             }
             fileNameInput.value = ''; // Clear the input box after submission
         }
 
         function findSimilarFileName(fileName) {
-            return musicFiles.find(file => file.toLowerCase().replace(/^music\//, '').replace(/\.mp3$/g, '').includes(fileName));
+            const normalizedFileName = fileName.toLowerCase();
+            return musicFiles.find(file => file.toLowerCase() === normalizedFileName);
         }
 
         function showMessage(message, type) {
