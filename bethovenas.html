@@ -110,14 +110,31 @@
             audioPlayer.play();
         }
 
-        async function submitName() {
-            const fileNameInput = document.getElementById('fileName');
-            const fileName = fileNameInput.value.trim();
+       async function submitName() {
+    const fileNameInput = document.getElementById('fileName');
+    const fileName = fileNameInput.value.trim();
 
-            if (musicFiles.length === 0) {
-                showMessage('No music files available', 'error');
-                return;
-            }
+    if (musicFiles.length === 0) {
+        showMessage('No music files available', 'error');
+        return;
+    }
+
+    const similarFile = findSimilarFileName(fileName);
+    if (similarFile) {
+        showMessage(`The correct name is '${similarFile}'`, 'error');
+    } else if (fileName === '') {
+        showMessage('Please enter a file name', 'error');
+    } else {
+        showMessage(`The file '${fileName}' does not exist`, 'error');
+    }
+    fileNameInput.value = ''; // Clear the input box after submission
+}
+
+function findSimilarFileName(fileName) {
+    const normalizedFileName = fileName.toLowerCase();
+    return musicFiles.find(file => file.toLowerCase().includes(normalizedFileName));
+}
+
 
             const currentFile = musicFiles.find(file => file.toLowerCase() === fileName.toLowerCase());
             if (currentFile) {
