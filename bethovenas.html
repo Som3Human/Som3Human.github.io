@@ -92,20 +92,22 @@
         }
 
         async function playRandom() {
-            const audioPlayer = document.getElementById('audioPlayer');
-            const messageContainer = document.getElementById('messageContainer');
-            messageContainer.innerHTML = ''; // Clear previous messages
+    const audioPlayer = document.getElementById('audioPlayer');
+    const messageContainer = document.getElementById('messageContainer');
+    messageContainer.innerHTML = ''; // Clear previous messages
 
-            if (musicFiles.length === 0) {
-                showMessage('No music files available', 'error');
-                return;
-            }
+    if (musicFiles.length === 0) {
+        showMessage('No music files available', 'error');
+        return;
+    }
 
-            const randomIndex = Math.floor(Math.random() * musicFiles.length);
-            const randomFile = musicFiles[randomIndex];
-            audioPlayer.src = `music/${randomFile}.mp3`;
-            audioPlayer.play();
-        }
+    const randomIndex = Math.floor(Math.random() * musicFiles.length);
+    const randomFile = musicFiles[randomIndex];
+    audioPlayer.src = `music/${randomFile}.mp3`;
+    audioPlayer.load(); // Load the new audio source
+    audioPlayer.play();
+}
+
 
         async function submitName() {
             const fileNameInput = document.getElementById('fileName');
