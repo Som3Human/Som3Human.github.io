@@ -119,24 +119,29 @@
     // Remove "music/" prefix and ".mp3" extension from the input
     fileName = fileName.replace(/^music\//, '').replace(/\.mp3$/, '');
 
-    const currentFile = musicFiles.find(file => file.toLowerCase() === fileName.toLowerCase());
-    if (currentFile) {
-        const currentFileName = currentFile.replace(/^music\//, '').replace(/\.mp3$/, '');
-        const audioPlayer = document.getElementById('audioPlayer');
-        const playingFileName = audioPlayer.src.substring(audioPlayer.src.lastIndexOf('/') + 1, audioPlayer.src.lastIndexOf('.'));
-        if (currentFileName.toLowerCase() === playingFileName.toLowerCase()) {
-            showMessage('Correct!', 'success');
-        } else {
-            showMessage(`The correct name is '${currentFileName}', but the current file playing is '${playingFileName}'`, 'error');
-        }
-    } else if (fileName === '') {
-        const firstFile = musicFiles[0].replace(/^music\//, '').replace(/\.mp3$/, '');
-        showMessage(`The correct name is '${firstFile}'`, 'error');
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playingFileName = audioPlayer.src.substring(audioPlayer.src.lastIndexOf('/') + 1, audioPlayer.src.lastIndexOf('.'));
+    
+    if (fileName === '') {
+        const currentFileName = musicFiles[0].replace(/^music\//, '').replace(/\.mp3$/, '');
+        showMessage(`The correct name is '${currentFileName}'`, 'error');
     } else {
-        showMessage(`The file '${fileName}' does not exist`, 'error');
+        const currentFile = musicFiles.find(file => file.toLowerCase().includes(fileName.toLowerCase()));
+        if (currentFile) {
+            const currentFileName = currentFile.replace(/^music\//, '').replace(/\.mp3$/, '');
+            if (currentFileName.toLowerCase() === playingFileName.toLowerCase()) {
+                showMessage('Correct!', 'success');
+            } else {
+                showMessage(`The correct name is '${currentFileName}', but the current file playing is '${playingFileName}'`, 'error');
+            }
+        } else {
+            showMessage(`The file '${fileName}' does not exist`, 'error');
+        }
     }
+    
     fileNameInput.value = ''; // Clear the input box after submission
 }
+
 
 
         function showMessage(message, type) {
