@@ -86,21 +86,23 @@
         const filesArray = [];
         let currentIndex = -1;
         let previousIndex = -1;
+        let incorrectMessageTimeout = null;
 
         function showMessage(message, type) {
             const messageContainer = document.getElementById('messageContainer');
-            const div = document.createElement('div');
-            div.textContent = message;
-            div.classList.add('message');
-            if (type === 'success') {
-                div.classList.add('success');
-            } else if (type === 'error') {
-                div.classList.add('error');
+            messageContainer.innerHTML = ''; // Clear previous messages
+
+            if (message !== '') {
+                const div = document.createElement('div');
+                div.textContent = message;
+                div.classList.add('message');
+                if (type === 'success') {
+                    div.classList.add('success');
+                } else if (type === 'error') {
+                    div.classList.add('error');
+                }
+                messageContainer.appendChild(div);
             }
-            messageContainer.appendChild(div);
-            setTimeout(() => {
-                div.remove();
-            }, 3000);
         }
 
         function uploadFolder() {
@@ -118,6 +120,7 @@
 
         function playRandom() {
             const audioPlayer = document.getElementById('audioPlayer');
+            showMessage('', ''); // Clear any previous message
             if (filesArray.length === 0) {
                 showMessage('No files uploaded', 'error');
                 return;
@@ -134,15 +137,14 @@
             const randomFile = filesArray[currentIndex];
             audioPlayer.src = URL.createObjectURL(randomFile);
             audioPlayer.play();
+
+            // Clear any previous incorrect message timeout
+            clearTimeout(incorrectMessageTimeout);
         }
 
         function submitName() {
             const fileNameInput = document.getElementById('fileName');
             const fileName = fileNameInput.value.trim();
-            if (fileName === '') {
-                showMessage('Please enter a file name', 'error');
-                return;
-            }
             if (filesArray.length === 0) {
                 showMessage('No files uploaded', 'error');
                 return;
@@ -154,8 +156,14 @@
 
             if (fileName.toLowerCase() === correctName.toLowerCase()) {
                 showMessage('Correct!', 'success');
+            } else if (fileName === '') {
+                showMessage(`The correct answer is: ${correctName}`, 'error');
             } else {
                 showMessage(`The correct answer was: ${correctName}. You answered: ${fileName}`, 'error');
+                // Set a timeout to clear the incorrect message when a new song is played
+                incorrectMessageTimeout = setTimeout(() => {
+                    showMessage('', ''); // Empty message to clear the container
+                }, 7000);
             }
             fileNameInput.value = ''; // Clear the input box after submission
         }
