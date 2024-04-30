@@ -119,7 +119,8 @@
         return;
     }
 
-    const similarFile = findSimilarFileName(fileName);
+    const normalizedFileName = fileName.toLowerCase().replace(/^music\/|\.mp3$/g, '');
+    const similarFile = findSimilarFileName(normalizedFileName);
     if (similarFile) {
         showMessage(`The correct name is '${similarFile}'`, 'error');
     } else if (fileName === '') {
@@ -129,6 +130,11 @@
     }
     fileNameInput.value = ''; // Clear the input box after submission
 }
+
+function findSimilarFileName(fileName) {
+    return musicFiles.find(file => file.toLowerCase().replace(/^music\/|\.mp3$/g, '') === fileName);
+}
+
 
 function findSimilarFileName(fileName) {
     const normalizedFileName = fileName.toLowerCase();
