@@ -85,56 +85,50 @@
             try {
                 const response = await fetch('music.json');
                 const data = await response.json();
-                musicFiles = data.musicFiles.map(file => file.replace(/^music\//, '').replace(/\.mp3$/, ''));
+                musicFiles = data.musicFiles;
             } catch (error) {
                 console.error('Error fetching music files:', error);
             }
         }
 
         async function playRandom() {
-    const audioPlayer = document.getElementById('audioPlayer');
-    const messageContainer = document.getElementById('messageContainer');
-    messageContainer.innerHTML = ''; // Clear previous messages
-
-    if (musicFiles.length === 0) {
-        showMessage('No music files available', 'error');
-        return;
-    }
-
-    const randomIndex = Math.floor(Math.random() * musicFiles.length);
-    const randomFile = musicFiles[randomIndex];
-    audioPlayer.src = `music/${randomFile}.mp3`;
-    audioPlayer.load(); // Load the new audio source
-    audioPlayer.play();
-}
-
-
-        async function submitName() {
-            const fileNameInput = document.getElementById('fileName');
-            const fileName = fileNameInput.value.trim();
+            const audioPlayer = document.getElementById('audioPlayer');
+            const messageContainer = document.getElementById('messageContainer');
+            messageContainer.innerHTML = ''; // Clear previous messages
 
             if (musicFiles.length === 0) {
                 showMessage('No music files available', 'error');
                 return;
             }
 
-            if (fileName === '') {
-                showMessage(`Please enter a file name. The correct name is '${musicFiles[0]}'`, 'error');
+            const randomIndex = Math.floor(Math.random() * musicFiles.length);
+            const randomFile = musicFiles[randomIndex];
+            audioPlayer.src = randomFile;
+            audioPlayer.play();
+        }
+
+        async function submitName() {
+            const fileNameInput = document.getElementById('fileName');
+            let fileName = fileNameInput.value.trim();
+
+            if (musicFiles.length === 0) {
+                showMessage('No music files available', 'error');
                 return;
             }
 
-            const similarFile = findSimilarFileName(fileName);
-            if (similarFile) {
-                showMessage(`The correct name is '${similarFile}'. You entered '${fileName}'.`, 'error');
+            // Remove "music/" prefix and ".mp3" extension from the input
+            fileName = fileName.replace(/^music\//, '').replace(/\.mp3$/, '');
+
+            const currentFile = musicFiles.find(file => file.toLowerCase() === fileName.toLowerCase());
+            if (currentFile) {
+                showMessage('Correct!', 'success');
+            } else if (fileName === '') {
+                const firstFile = musicFiles[0].replace(/^music\//, '').replace(/\.mp3$/, '');
+                showMessage(`The correct name is '${firstFile}'`, 'error');
             } else {
-                showMessage(`The file '${fileName}' does not exist`, 'error');
+                showMessage(`The correct name is '${musicFiles[0].replace(/^music\//, '').replace(/\.mp3$/, '')}', you entered '${fileName}'`, 'error');
             }
             fileNameInput.value = ''; // Clear the input box after submission
-        }
-
-        function findSimilarFileName(fileName) {
-            const normalizedFileName = fileName.toLowerCase();
-            return musicFiles.find(file => file.toLowerCase() === normalizedFileName);
         }
 
         function showMessage(message, type) {
