@@ -32,9 +32,15 @@ function playRandomSong() {
     const randomSong = songList[randomIndex];
 
     audioPlayer.src = randomSong.location;
-    audioPlayer.play();
 
-    showMessage(`Playing: ${randomSong.name}`);
+    // Play or pause the audio based on its current state
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        showMessage(`Playing: ${randomSong.name}`);
+    } else {
+        audioPlayer.pause();
+        showMessage(`Paused: ${randomSong.name}`);
+    }
 }
 
 // Event listener for the play button
