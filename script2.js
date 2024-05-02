@@ -1,20 +1,48 @@
-function playRandomSong() {
-    fetch('songlist.json')
-        .then(response => response.json())
-        .then(data => {
-            const songs = data.songs;
-            const randomIndex = Math.floor(Math.random() * songs.length);
-            const randomSong = songs[randomIndex];
-            const audio = new Audio(randomSong.location);
-            audio.play();
-            const guessedName = prompt('What is the name of the song?');
-            if (guessedName === randomSong.name) {
-                alert('Correct!');
-            } else if (guessedName === null) {
-                alert(`The correct name is ${randomSong.name}.`);
-            } else {
-                alert(`The correct name is ${randomSong.name}, you entered ${guessedName}.`);
-            }
-        })
-        .catch(error => console.error('Error fetching song list:', error));
+const messageDiv = document.getElementById('message');
+const playBtn = document.getElementById('playBtn');
+const audioPlayer = document.getElementById('audioPlayer');
+
+let songList;
+
+// Fetch the song list
+fetch('songlist.json')
+    .then(response => response.json())
+    .then(data => {
+        songList = data.songs;
+    })
+    .catch(error => {
+        console.error('Error fetching song list:', error);
+        showMessage('Error fetching song list. Please try again later.', 'error');
+    });
+
+// Function to display messages
+function showMessage(message, type = 'info') {
+    messageDiv.textContent = message;
+    messageDiv.className = type;
 }
+
+// Function to play a random song
+function playRandomSong() {
+    if (!songList || songList.length === 0) {
+        showMessage('No songs available.', 'error');
+        return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * songList.length);
+    const randomSong = songList[randomIndex];
+
+    audioPlayer.src = randomSong.location;
+    audioPlayer.play();
+
+    showMessage(`Playing: ${randomSong.name}`);
+}
+
+// Event listener for the play button
+playBtn.addEventListener('click', () => {
+    playRandomSong();
+});
+
+// Event listener for when the audio finishes playing
+audioPlayer.addEventListener('ended', () => {
+    playRandomSong();
+});

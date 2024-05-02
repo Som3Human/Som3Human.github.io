@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Music Player</title>
+    <link rel="stylesheet" href="styles2.css">
 </head>
 <body>
-    <h1>Random Music Player</h1>
-    <button onclick="playRandomSong()">Play Random Song</button>
+    <div class="container">
+        <h1>Random Music Player</h1>
+        <div id="message"></div>
+        <button id="playBtn">Play Random Song</button>
+        <audio id="audioPlayer" controls></audio>
+    </div>
     <script src="script2.js"></script>
 </body>
 </html>
