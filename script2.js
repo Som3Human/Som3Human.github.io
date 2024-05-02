@@ -38,6 +38,7 @@ function playRandomSong() {
     audioPlayer.play();
 
     nameInput.value = ''; // Clear the input field
+    showMessage(''); // Clear the message
 }
 
 // Function to check the answer
