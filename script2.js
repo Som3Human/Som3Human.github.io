@@ -1,8 +1,11 @@
 const messageDiv = document.getElementById('message');
 const playBtn = document.getElementById('playBtn');
 const audioPlayer = document.getElementById('audioPlayer');
+const nameInput = document.getElementById('nameInput');
+const submitBtn = document.getElementById('submitBtn');
 
 let songList;
+let currentSong;
 
 // Fetch the song list
 fetch('songlist.json')
@@ -29,23 +32,43 @@ function playRandomSong() {
     }
 
     const randomIndex = Math.floor(Math.random() * songList.length);
-    const randomSong = songList[randomIndex];
+    currentSong = songList[randomIndex];
 
-    audioPlayer.src = randomSong.location;
+    audioPlayer.src = currentSong.location;
+    audioPlayer.play();
 
-    // Play or pause the audio based on its current state
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-        showMessage(`Playing: ${randomSong.name}`);
+    showMessage(`Listening to a song...`);
+}
+
+// Function to check the answer
+function checkAnswer() {
+    const guessedName = nameInput.value.trim();
+
+    if (!guessedName) {
+        showMessage(`The correct name is: ${currentSong.name}`);
+    } else if (guessedName.toLowerCase() === currentSong.name.toLowerCase()) {
+        showMessage('Correct!', 'success');
     } else {
-        audioPlayer.pause();
-        showMessage(`Paused: ${randomSong.name}`);
+        showMessage(`The correct name is: ${currentSong.name}. You entered: ${guessedName}`, 'error');
     }
+    nameInput.value = ''; // Clear the input field
 }
 
 // Event listener for the play button
 playBtn.addEventListener('click', () => {
     playRandomSong();
+});
+
+// Event listener for the submit button
+submitBtn.addEventListener('click', () => {
+    checkAnswer();
+});
+
+// Event listener for the Enter key in the input field
+nameInput.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+        checkAnswer();
+    }
 });
 
 // Event listener for when the audio finishes playing
