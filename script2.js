@@ -47,9 +47,7 @@ function playRandomSong() {
 function checkAnswer() {
     const guessedName = nameInput.value.trim();
 
-    if (!guessedName) {
-        showMessage(''); // Hide the message if the input is empty
-    } else if (guessedName.toLowerCase() === currentSong.name.toLowerCase()) {
+     if (guessedName.toLowerCase() === currentSong.name.toLowerCase()) {
         showMessage('Correct!', 'success');
     } else {
         showMessage(`The correct name is: ${currentSong.name}. You entered: ${guessedName}`, 'error');
@@ -79,5 +77,5 @@ audioPlayer.addEventListener('ended', () => {
 });
 
 // Add version to the footer
-footer.textContent = `Version: ${version}`;
-document.body.appendChild(footer);
+//footer.textContent = `Version: ${version}`;
+//document.body.appendChild(footer);
