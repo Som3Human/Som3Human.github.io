@@ -4,7 +4,7 @@ const audioPlayer = document.getElementById('audioPlayer');
 const nameInput = document.getElementById('nameInput');
 const submitBtn = document.getElementById('submitBtn');
 const footer = document.createElement('footer');
-const version = '3.0'; // Update with your desired version
+const version = '1.8'; // Update with your desired version
 
 let songList;
 let currentSong;
@@ -40,14 +40,16 @@ function playRandomSong() {
     audioPlayer.play();
 
     nameInput.value = ''; // Clear the input field
-    showMessage(''); // Clear the message
+    showMessage(`Listening to: ${currentSong.name}`); // Display the name of the song
 }
 
 // Function to check the answer
 function checkAnswer() {
     const guessedName = nameInput.value.trim();
 
-     if (guessedName.toLowerCase() === currentSong.name.toLowerCase()) {
+    if (!guessedName) {
+        showMessage(`The correct name is: ${currentSong.name}`);
+    } else if (guessedName.toLowerCase() === currentSong.name.toLowerCase()) {
         showMessage('Correct!', 'success');
     } else {
         showMessage(`The correct name is: ${currentSong.name}. You entered: ${guessedName}`, 'error');
@@ -77,5 +79,5 @@ audioPlayer.addEventListener('ended', () => {
 });
 
 // Add version to the footer
-//footer.textContent = `Version: ${version}`;
-//document.body.appendChild(footer);
+footer.textContent = `Version: ${version}`;
+document.body.appendChild(footer);
