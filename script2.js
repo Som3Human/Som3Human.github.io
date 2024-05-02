@@ -37,7 +37,7 @@ function playRandomSong() {
     audioPlayer.src = currentSong.location;
     audioPlayer.play();
 
-    showMessage(`Listening to a song...`);
+    nameInput.value = ''; // Clear the input field
 }
 
 // Function to check the answer
@@ -45,13 +45,12 @@ function checkAnswer() {
     const guessedName = nameInput.value.trim();
 
     if (!guessedName) {
-        showMessage(`The correct name is: ${currentSong.name}`);
+        showMessage(''); // Hide the message if the input is empty
     } else if (guessedName.toLowerCase() === currentSong.name.toLowerCase()) {
         showMessage('Correct!', 'success');
     } else {
         showMessage(`The correct name is: ${currentSong.name}. You entered: ${guessedName}`, 'error');
     }
-    nameInput.value = ''; // Clear the input field
 }
 
 // Event listener for the play button
