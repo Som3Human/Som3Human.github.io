@@ -4,7 +4,7 @@ const audioPlayer = document.getElementById('audioPlayer');
 const nameInput = document.getElementById('nameInput');
 const submitBtn = document.getElementById('submitBtn');
 const footer = document.createElement('footer');
-const version = '1.8'; // Update with your desired version
+const version = '1.9'; // Update with your desired version
 
 let songList;
 let currentSong;
@@ -40,7 +40,7 @@ function playRandomSong() {
     audioPlayer.play();
 
     nameInput.value = ''; // Clear the input field
-    showMessage(`Listening to: ${currentSong.name}`); // Display the name of the song
+    showMessage(''); // Clear the showMessage dialog
 }
 
 // Function to check the answer
