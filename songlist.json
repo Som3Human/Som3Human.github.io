@@ -1,0 +1,100 @@
+{
+    "songs": [
+        {
+            "name": "Nr.14 Menesienos I dalis",
+            "location": "music/Nr.14 Menesienos I dalis.mp3"
+        },
+        {
+            "name": "Nr.14 Menesienos II dalies pradzia",
+            "location": "music/Nr.14 Menesienos II dalies pradzia.mp3"
+        },
+        {
+            "name": "Nr.14 Menesienos II dalies trio",
+            "location": "music/Nr.14 Menesienos II dalies trio.mp3"
+        },
+        {
+            "name": "Nr.14 Menesienos III d. pagrindine tema",
+            "location": "music/Nr.14 Menesienos III d. pagrindine tema.mp3"
+        },
+        {
+            "name": "Nr.14 Menesienos III d. salutine tema",
+            "location": "music/Nr.14 Menesienos III d. salutine tema.mp3"
+        },
+        {
+            "name": "Nr.21 Aurora I d. pagrindine tema",
+            "location": "music/Nr.21 Aurora I d. pagrindine tema.mp3"
+        },
+        {
+            "name": "Nr.21 Aurora I d.salutine tema",
+            "location": "music/Nr.21 Aurora I d.salutine tema.mp3"
+        },
+        {
+            "name": "Nr.21 Aurora II dalis",
+            "location": "music/Nr.21 Aurora II dalis.mp3"
+        },
+        {
+            "name": "Nr.21 Aurora III dalies_refrenas",
+            "location": "music/Nr.21 Aurora III dalies_refrenas.mp3"
+        },
+        {
+            "name": "Nr.21 Aurora III dalis (tesinys)",
+            "location": "music/Nr.21 Aurora III dalis (tesinys).mp3"
+        },
+        {
+            "name": "Nr.23 Appasionata I d. pagrindine tema",
+            "location": "music/Nr.23 Appasionata I d. pagrindine tema.mp3"
+        },
+        {
+            "name": "Nr.23 Appasionata I d. temu pletojimas",
+            "location": "music/Nr.23 Appasionata I d. temu pletojimas.mp3"
+        },
+        {
+            "name": "Nr.23 Appasionata I d.salutine tema",
+            "location": "music/Nr.23 Appasionata I d.salutine tema.mp3"
+        },
+        {
+            "name": "Nr.23 Appasionata II dalis_tema",
+            "location": "music/Nr.23 Appasionata II dalis_tema.mp3"
+        },
+        {
+            "name": "Nr.23 Appasionata IId 1variacija",
+            "location": "music/Nr.23 Appasionata IId 1variacija.mp3"
+        },
+        {
+            "name": "Nr.23 Appasionata III dalis",
+            "location": "music/Nr.23 Appasionata III dalis.mp3"
+        },
+        {
+            "name": "Nr.8 Patetine I d. Pagrindine tema",
+            "location": "music/Nr.8 Patetine I d. Pagrindine tema.mp3"
+        },
+        {
+            "name": "Nr.8 Patetine I d. Repriza",
+            "location": "music/Nr.8 Patetine I d. Repriza.mp3"
+        },
+        {
+            "name": "Nr.8 Patetine I d. Salutine tema",
+            "location": "music/Nr.8 Patetine I d. Salutine tema.mp3"
+        },
+        {
+            "name": "Nr.8 Patetine I d.Izanga",
+            "location": "music/Nr.8 Patetine I d.Izanga.mp3"
+        },
+        {
+            "name": "Nr.8 Patetine II dalis",
+            "location": "music/Nr.8 Patetine II dalis.mp3"
+        },
+        {
+            "name": "Nr.8 Patetine III d. I epizodas baig.tema",
+            "location": "music/Nr.8 Patetine III d. I epizodas baig.tema.mp3"
+        },
+        {
+            "name": "Nr.8 Patetine III d. II epizodas",
+            "location": "music/Nr.8 Patetine III d. II epizodas.mp3"
+        },
+        {
+            "name": "Nr.8 Patetine III d. Pradzia",
+            "location": "music/Nr.8 Patetine III d. Pradzia.mp3"
+        }
+    ]
+}
