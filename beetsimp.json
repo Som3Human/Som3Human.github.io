@@ -1,0 +1,128 @@
+{
+  "songs": [
+    {
+      "name": "Egmontas Izanga",
+      "location": "Beethoveno simf muz/Egmontas/Izanga.mp3"
+    },
+    {
+      "name": "Egmontas Pagrindine tema",
+      "location": "Beethoveno simf muz/Egmontas/Pagrindine tema.mp3"
+    },
+    {
+      "name": "Egmontas Salutine tema",
+      "location": "Beethoveno simf muz/Egmontas/Salutine tema.mp3"
+    },
+    {
+      "name": "Simfonija Nr.3 I dalies pagr. tema",
+      "location": "Beethoveno simf muz/Simfonija Nr.3/01_I dalies pagr. tema.mp3"
+    },
+    {
+      "name": "Simfonija Nr.3 I d. salutine tema",
+      "location": "Beethoveno simf muz/Simfonija Nr.3/02_I d. salutine tema.mp3"
+    },
+    {
+      "name": "Simfonija Nr.3 II dalis",
+      "location": "Beethoveno simf muz/Simfonija Nr.3/03_II dalis.mp3"
+    },
+    {
+      "name": "Simfonija Nr.3 III dalis",
+      "location": "Beethoveno simf muz/Simfonija Nr.3/04_III dalis.mp3"
+    },
+    {
+      "name": "Simfonija Nr.3 IV dalis",
+      "location": "Beethoveno simf muz/Simfonija Nr.3/05_IV dalis.mp3"
+    },
+    {
+      "name": "Simfonija Nr.5 I d. pagrindine tema",
+      "location": "Beethoveno simf muz/Simfonija Nr.5/01_I d. pagrindine tema.mp3"
+    },
+    {
+      "name": "Simfonija Nr.5 I d. salutine tema",
+      "location": "Beethoveno simf muz/Simfonija Nr.5/02_I d. salutine tema.mp3"
+    },
+    {
+      "name": "Simfonija Nr.5 I d.temų perdirbimas",
+      "location": "Beethoveno simf muz/Simfonija Nr.5/03_I d.temų perdirbimas.mp3"
+    },
+    {
+      "name": "Simfonija Nr.5 II d. I tema",
+      "location": "Beethoveno simf muz/Simfonija Nr.5/04_II d. I tema.mp3"
+    },
+    {
+      "name": "Simfonija Nr.5 IId. II tema",
+      "location": "Beethoveno simf muz/Simfonija Nr.5/05_IId. II tema.mp3"
+    },
+    {
+      "name": "Simfonija Nr.5 III dalis",
+      "location": "Beethoveno simf muz/Simfonija Nr.5/06_III dalis.mp3"
+    },
+    {
+      "name": "Simfonija Nr.5 IV dalis",
+      "location": "Beethoveno simf muz/Simfonija Nr.5/07_IV dalis.mp3"
+    },
+    {
+      "name": "Simfonija Nr.6 I dalis (pagr.t.)",
+      "location": "Beethoveno simf muz/Simfonija Nr.6/01_I dalis (pagr.t.).mp3"
+    },
+    {
+      "name": "Simfonija Nr.6 I dalis-Salut tema",
+      "location": "Beethoveno simf muz/Simfonija Nr.6/02_I dalis-Salut tema.mp3"
+    },
+    {
+      "name": "Simfonija Nr.6 II dalis",
+      "location": "Beethoveno simf muz/Simfonija Nr.6/03_II dalis.mp3"
+    },
+    {
+      "name": "Simfonija Nr.6 III dalis",
+      "location": "Beethoveno simf muz/Simfonija Nr.6/04_III dalis.mp3"
+    },
+    {
+      "name": "Simfonija Nr.6 IV dalis",
+      "location": "Beethoveno simf muz/Simfonija Nr.6/05_IV dalis.mp3"
+    },
+    {
+      "name": "Simfonija Nr.6 IV dalis (tes.)",
+      "location": "Beethoveno simf muz/Simfonija Nr.6/06_IV dalis (tes.).mp3"
+    },
+    {
+      "name": "Simfonija Nr.6 V dalis",
+      "location": "Beethoveno simf muz/Simfonija Nr.6/07_V dalis.mp3"
+    },
+    {
+      "name": "Simfonija Nr.9 I dalis",
+      "location": "Beethoveno simf muz/Simfonija Nr.9/01_I dalis.mp3"
+    },
+    {
+      "name": "Simfonija Nr.9 I dalis salutine partija",
+      "location": "Beethoveno simf muz/Simfonija Nr.9/02_I dalis salutine partija.mp3"
+    },
+    {
+      "name": "Simfonija Nr.9 III dalis",
+      "location": "Beethoveno simf muz/Simfonija Nr.9/02_III dalis.mp3"
+    },
+    {
+      "name": "Simfonija Nr.9 IV dalis",
+      "location": "Beethoveno simf muz/Simfonija Nr.9/03_IV dalis.mp3"
+    },
+    {
+      "name": "Simfonija Nr.9 Finalas (pradz.)",
+      "location": "Beethoveno simf muz/Simfonija Nr.9/04_Finalas (pradz.).mp3"
+    },
+    {
+      "name": "Simfonija Nr.9 Finalas Dz.t.(styg.)",
+      "location": "Beethoveno simf muz/Simfonija Nr.9/05_Finalas Dz.t.(styg.).mp3"
+    },
+    {
+      "name": "Simfonija Nr.9 Finalas Dz.t. (bosas)",
+      "location": "Beethoveno simf muz/Simfonija Nr.9/06_Finalas Dz.t. (bosas).mp3"
+    },
+    {
+      "name": "Simfonija Nr.9 Finalas Dz.t. (marsas)",
+      "location": "Beethoveno simf muz/Simfonija Nr.9/07_Finalas Dz.t. (marsas).mp3"
+    },
+    {
+      "name": "Simfonija Nr.9 Finalas Dz.t.(choras)",
+      "location": "Beethoveno simf muz/Simfonija Nr.9/08_Finalas Dz.t.(choras).mp3"
+    }
+  ]
+}
