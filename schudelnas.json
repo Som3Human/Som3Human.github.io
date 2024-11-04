@@ -1,0 +1,184 @@
+{
+  "songs": [
+    {
+      "name": "Mendelssohn Dainos be zodziu Pavasario daina",
+      "location": "music/Mendelssohn/Dainos be zodziu/Pavasario daina.mp3"
+    },
+    {
+      "name": "Mendelssohn Dainos be zodziu Venecijos Gondolininko daina",
+      "location": "music/Mendelssohn/Dainos be zodziu/Venecijos Gondolininko daina.mp3"
+    },
+    {
+      "name": "Mendelssohn Dainos be zodziu Verpimo daina",
+      "location": "music/Mendelssohn/Dainos be zodziu/Verpimo daina.mp3"
+    },
+    {
+      "name": "Mendelssohn Koncertas smuikui ir orkestrui Id. Pagrindine tema",
+      "location": "music/Mendelssohn/Koncertas smuikui ir orkestrui/01_Id. Pagrindine tema.mp3"
+    },
+    {
+      "name": "Mendelssohn Koncertas smuikui ir orkestrui Id. Salutine tema",
+      "location": "music/Mendelssohn/Koncertas smuikui ir orkestrui/02_Id. Salutine tema.mp3"
+    },
+    {
+      "name": "Mendelssohn Koncertas smuikui ir orkestrui II dalis",
+      "location": "music/Mendelssohn/Koncertas smuikui ir orkestrui/03_II dalis.mp3"
+    },
+    {
+      "name": "Mendelssohn Koncertas smuikui ir orkestrui IIId. Izanga",
+      "location": "music/Mendelssohn/Koncertas smuikui ir orkestrui/04_IIId. Izanga.mp3"
+    },
+    {
+      "name": "Mendelssohn Koncertas smuikui ir orkestrui IIId. Finalas",
+      "location": "music/Mendelssohn/Koncertas smuikui ir orkestrui/05_IIId. Finalas.mp3"
+    },
+    {
+      "name": "Mendelssohn Vasarvidzio nakties sapnas 01 Uvertiura",
+      "location": "music/Mendelssohn/Vasarvidzio nakties sapnas/01 Uvertiura.mp3"
+    },
+    {
+      "name": "Mendelssohn Vasarvidzio nakties sapnas 02 Uvertiura_ Pagr tema",
+      "location": "music/Mendelssohn/Vasarvidzio nakties sapnas/02 Uvertiura_ Pagr tema.mp3"
+    },
+    {
+      "name": "Mendelssohn Vasarvidzio nakties sapnas 03 Uvertiura salutine tema",
+      "location": "music/Mendelssohn/Vasarvidzio nakties sapnas/03 Uvertiura salutine tema.mp3"
+    },
+    {
+      "name": "Schubert Dainos Forele",
+      "location": "music/Schubert/Dainos/Forele.mp3"
+    },
+    {
+      "name": "Schubert Dainos Giriu karalius-2",
+      "location": "music/Schubert/Dainos/Giriu karalius-2.mp3"
+    },
+    {
+      "name": "Schubert Dainos Giriu karalius",
+      "location": "music/Schubert/Dainos/Giriu karalius.mp3"
+    },
+    {
+      "name": "Schubert Dainos Lauko rozele",
+      "location": "music/Schubert/Dainos/Lauko rozele.mp3"
+    },
+    {
+      "name": "Schubert Dainos Margarita prie ratelio",
+      "location": "music/Schubert/Dainos/Margarita prie ratelio.mp3"
+    },
+    {
+      "name": "Schubert Grazioji malunininke 01 Kelionen",
+      "location": "music/Schubert/Grazioji malunininke/01 Kelionen.mp3"
+    },
+    {
+      "name": "Schubert Grazioji malunininke 02 Kur",
+      "location": "music/Schubert/Grazioji malunininke/02 Kur.mp3"
+    },
+    {
+      "name": "Schubert Grazioji malunininke 11 Manoji",
+      "location": "music/Schubert/Grazioji malunininke/11 Manoji.mp3"
+    },
+    {
+      "name": "Schubert Grazioji malunininke 14 Medziotojas",
+      "location": "music/Schubert/Grazioji malunininke/14 Medziotojas.mp3"
+    },
+    {
+      "name": "Schubert Grazioji malunininke 19 Malunininkas ir upelis",
+      "location": "music/Schubert/Grazioji malunininke/19 Malunininkas ir upelis.mp3"
+    },
+    {
+      "name": "Schubert Grazioji malunininke 20 Upelio lopsine",
+      "location": "music/Schubert/Grazioji malunininke/20 Upelio lopsine.mp3"
+    },
+    {
+      "name": "Schubert Gulbes giesme Antrininkas",
+      "location": "music/Schubert/Gulbes giesme/Antrininkas.mp3"
+    },
+    {
+      "name": "Schubert Gulbes giesme Serenada",
+      "location": "music/Schubert/Gulbes giesme/Serenada.mp3"
+    },
+    {
+      "name": "Schubert Nebaigtoji simfonija Id. Izanga",
+      "location": "music/Schubert/Nebaigtoji simfonija/01_Id. Izanga.mp3"
+    },
+    {
+      "name": "Schubert Nebaigtoji simfonija Id. Pagrindine tema",
+      "location": "music/Schubert/Nebaigtoji simfonija/02_Id. Pagrindine tema.mp3"
+    },
+    {
+      "name": "Schubert Nebaigtoji simfonija Id. Salutine tema",
+      "location": "music/Schubert/Nebaigtoji simfonija/03_Id. Salutine tema.mp3"
+    },
+    {
+      "name": "Schubert Nebaigtoji simfonija IId",
+      "location": "music/Schubert/Nebaigtoji simfonija/04_IId.mp3"
+    },
+    {
+      "name": "Schubert Ziemos kelione 01 Labanakt",
+      "location": "music/Schubert/Ziemos kelione/01 Labanakt.mp3"
+    },
+    {
+      "name": "Schubert Ziemos kelione 05 Liepa",
+      "location": "music/Schubert/Ziemos kelione/05 Liepa.mp3"
+    },
+    {
+      "name": "Schubert Ziemos kelione 11 Pavasario sapnas",
+      "location": "music/Schubert/Ziemos kelione/11 Pavasario sapnas.mp3"
+    },
+    {
+      "name": "Schubert Ziemos kelione 24 Rylininkas",
+      "location": "music/Schubert/Ziemos kelione/24 Rylininkas.mp3"
+    },
+    {
+      "name": "Schumann Fantastines pjeses Kodel",
+      "location": "music/Schumann/Fantastines pjeses/Kodel.mp3"
+    },
+    {
+      "name": "Schumann Fantastines pjeses Polekis",
+      "location": "music/Schumann/Fantastines pjeses/Polekis.mp3"
+    },
+    {
+      "name": "Schumann Karnavalas (fort.) Izanga",
+      "location": "music/Schumann/Karnavalas (fort.)/01_Izanga.mp3"
+    },
+    {
+      "name": "Schumann Karnavalas (fort.) Euzebijus",
+      "location": "music/Schumann/Karnavalas (fort.)/04_Euzebijus.mp3"
+    },
+    {
+      "name": "Schumann Karnavalas (fort.) Florestanas",
+      "location": "music/Schumann/Karnavalas (fort.)/05_Florestanas.mp3"
+    },
+    {
+      "name": "Schumann Karnavalas (fort.) Chopin",
+      "location": "music/Schumann/Karnavalas (fort.)/09_Chopin.mp3"
+    },
+    {
+      "name": "Schumann Karnavalas (fort.) Paganini",
+      "location": "music/Schumann/Karnavalas (fort.)/10_Paganini.mp3"
+    },
+    {
+      "name": "Schumann Karnavalas (fort.) 11a_Davidsbiundleriu marsas(Grossvater)",
+      "location": "music/Schumann/Karnavalas (fort.)/11a_Davidsbiundleriu marsas(Grossvater).mp3"
+    },
+    {
+      "name": "Schumann Karnavalas (fort.) Davidsbiundleriu marsas",
+      "location": "music/Schumann/Karnavalas (fort.)/11_Davidsbiundleriu marsas.mp3"
+    },
+    {
+      "name": "Schumann Poeto meile Tada geguzi nuostabus",
+      "location": "music/Schumann/Poeto meile/01_Tada geguzi nuostabus.mp3"
+    },
+    {
+      "name": "Schumann Poeto meile Nepykstu as",
+      "location": "music/Schumann/Poeto meile/03_Nepykstu as.mp3"
+    },
+    {
+      "name": "Schumann Poeto meile Nepykstu as (2)",
+      "location": "music/Schumann/Poeto meile/04_Nepykstu as (2).mp3"
+    },
+    {
+      "name": "Schumann Poeto meile Sapne verkiau",
+      "location": "music/Schumann/Poeto meile/05_Sapne verkiau.mp3"
+    }
+  ]
+}
