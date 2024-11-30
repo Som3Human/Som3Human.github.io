@@ -1,0 +1,68 @@
+{
+  "songs": [
+    {
+      "name": "I d. Pagrindine tema",
+      "location": "hay/01_I d. Pagrindine tema.mp3"
+    },
+    {
+      "name": "I dalis.Izanga",
+      "location": "hay/01_I dalis.Izanga.mp3"
+    },
+    {
+      "name": "I d.Salutine tema",
+      "location": "hay/02_I d.Salutine tema.mp3"
+    },
+    {
+      "name": "I dalis. Pagr. tema",
+      "location": "hay/02_I dalis. Pagr. tema.mp3"
+    },
+    {
+      "name": "I dalis. Salutine tema",
+      "location": "hay/03_I dalis. Salutine tema.mp3"
+    },
+    {
+      "name": "II dalis",
+      "location": "hay/03_II dalis.mp3"
+    },
+    {
+      "name": "Pavasaris.Simono arija",
+      "location": "hay/03_Pavasaris.Simono arija.mp3"
+    },
+    {
+      "name": "II dalis. I tema",
+      "location": "hay/04_II dalis. I tema.mp3"
+    },
+    {
+      "name": "III dalis",
+      "location": "hay/04_III dalis.mp3"
+    },
+    {
+      "name": "II dalis. II tema",
+      "location": "hay/05_II dalis. II tema.mp3"
+    },
+    {
+      "name": "Vasara. Audros choras",
+      "location": "hay/05_Vasara. Audros choras.mp3"
+    },
+    {
+      "name": "III dalis",
+      "location": "hay/06_III dalis.mp3"
+    },
+    {
+      "name": "Ruduo. Mediotoju choras",
+      "location": "hay/06_Ruduo. Mediotoju choras.mp3"
+    },
+    {
+      "name": "IV dalis",
+      "location": "hay/07_IV dalis.mp3"
+    },
+    {
+      "name": "Ziema.Hanos daina-1",
+      "location": "hay/07_Ziema.Hanos daina-1.mp3"
+    },
+    {
+      "name": "Ziema.Hanos daina-2",
+      "location": "hay/08_Ziema.Hanos daina-2.mp3"
+    }
+  ]
+}
