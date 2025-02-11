@@ -1,0 +1,172 @@
+{
+  "songs": [
+    {
+      "name": "Chopin Balade g - moll Nr.1 01 izanga",
+      "location": "chopin_liszt/Chopin/Balade g - moll Nr.1/01 izanga.mp3"
+    },
+    {
+      "name": "Chopin Balade g - moll Nr.1 02 pagr. tema",
+      "location": "chopin_liszt/Chopin/Balade g - moll Nr.1/02 pagr. tema.mp3"
+    },
+    {
+      "name": "Chopin Balade g - moll Nr.1 03 salut.tema",
+      "location": "chopin_liszt/Chopin/Balade g - moll Nr.1/03 salut.tema.mp3"
+    },
+    {
+      "name": "Chopin Kuriniai fortepijonui Etiudas  op.10-12 c-moll",
+      "location": "chopin_liszt/Chopin/Kuriniai fortepijonui/Etiudas  op.10-12 c-moll.mp3"
+    },
+    {
+      "name": "Chopin Kuriniai fortepijonui Mazurka op.17-4 a-moll",
+      "location": "chopin_liszt/Chopin/Kuriniai fortepijonui/Mazurka op.17-4 a-moll.mp3"
+    },
+    {
+      "name": "Chopin Kuriniai fortepijonui Mazurka op.7-1 B-dur",
+      "location": "chopin_liszt/Chopin/Kuriniai fortepijonui/Mazurka op.7-1 B-dur.mp3"
+    },
+    {
+      "name": "Chopin Kuriniai fortepijonui Noktiurnas op.9 Nr.1 b-moll",
+      "location": "chopin_liszt/Chopin/Kuriniai fortepijonui/Noktiurnas op.9 Nr.1 b-moll.mp3"
+    },
+    {
+      "name": "Chopin Kuriniai fortepijonui Noktiurnas op15 Nr.2 Fis-dur",
+      "location": "chopin_liszt/Chopin/Kuriniai fortepijonui/Noktiurnas op15 Nr.2 Fis-dur.mp3"
+    },
+    {
+      "name": "Chopin Kuriniai fortepijonui Polonezas A-dur op.40 pradzia",
+      "location": "chopin_liszt/Chopin/Kuriniai fortepijonui/Polonezas A-dur op.40 pradzia.mp3"
+    },
+    {
+      "name": "Chopin Kuriniai fortepijonui Polonezas A-dur op.40 vid.dalis",
+      "location": "chopin_liszt/Chopin/Kuriniai fortepijonui/Polonezas A-dur op.40 vid.dalis.mp3"
+    },
+    {
+      "name": "Chopin Kuriniai fortepijonui Preliudas op.28 Nr. 4 e-moll",
+      "location": "chopin_liszt/Chopin/Kuriniai fortepijonui/Preliudas op.28 Nr. 4 e-moll.mp3"
+    },
+    {
+      "name": "Chopin Kuriniai fortepijonui Preliudas op.28 Nr.15 Des-dur",
+      "location": "chopin_liszt/Chopin/Kuriniai fortepijonui/Preliudas op.28 Nr.15 Des-dur.mp3"
+    },
+    {
+      "name": "Chopin Kuriniai fortepijonui Preliudas op.28 Nr.7 A-dur",
+      "location": "chopin_liszt/Chopin/Kuriniai fortepijonui/Preliudas op.28 Nr.7 A-dur.mp3"
+    },
+    {
+      "name": "Chopin Kuriniai fortepijonui Valsas  op.64-1 Des-dur",
+      "location": "chopin_liszt/Chopin/Kuriniai fortepijonui/Valsas  op.64-1 Des-dur.mp3"
+    },
+    {
+      "name": "Chopin Kuriniai fortepijonui Valsas op.64-2 cis-moll",
+      "location": "chopin_liszt/Chopin/Kuriniai fortepijonui/Valsas op.64-2 cis-moll.mp3"
+    },
+    {
+      "name": "Chopin Sonata Nr.2 b-moll op.35 I d. pagrindine tema",
+      "location": "chopin_liszt/Chopin/Sonata Nr.2 b-moll op.35/01_I d. pagrindine tema.mp3"
+    },
+    {
+      "name": "Chopin Sonata Nr.2 b-moll op.35 I d. salutine tema",
+      "location": "chopin_liszt/Chopin/Sonata Nr.2 b-moll op.35/02_I d. salutine tema.mp3"
+    },
+    {
+      "name": "Chopin Sonata Nr.2 b-moll op.35 II dalis",
+      "location": "chopin_liszt/Chopin/Sonata Nr.2 b-moll op.35/03_II dalis.mp3"
+    },
+    {
+      "name": "Chopin Sonata Nr.2 b-moll op.35 III d. pradzia",
+      "location": "chopin_liszt/Chopin/Sonata Nr.2 b-moll op.35/04_III d. pradzia.mp3"
+    },
+    {
+      "name": "Chopin Sonata Nr.2 b-moll op.35 III d. vidurys",
+      "location": "chopin_liszt/Chopin/Sonata Nr.2 b-moll op.35/05_III d. vidurys.mp3"
+    },
+    {
+      "name": "Chopin Sonata Nr.2 b-moll op.35 IV dalis",
+      "location": "chopin_liszt/Chopin/Sonata Nr.2 b-moll op.35/06_IV dalis.mp3"
+    },
+    {
+      "name": "Liszt Klajoniu metai Petrarkos sonetas Nr.123 Izanga",
+      "location": "chopin_liszt/Liszt/Klajoniu metai/Petrarkos sonetas Nr.123 Izanga.mp3"
+    },
+    {
+      "name": "Liszt Klajoniu metai Petrarkos sonetas Nr.123 Tema",
+      "location": "chopin_liszt/Liszt/Klajoniu metai/Petrarkos sonetas Nr.123 Tema.mp3"
+    },
+    {
+      "name": "Liszt Klajoniu metai Tarantela (1)",
+      "location": "chopin_liszt/Liszt/Klajoniu metai/Tarantela (1).mp3"
+    },
+    {
+      "name": "Liszt Klajoniu metai Tarantella (2)",
+      "location": "chopin_liszt/Liszt/Klajoniu metai/Tarantella (2).mp3"
+    },
+    {
+      "name": "Liszt Klajoniu metai Tevynes ilgesys (pradzia)",
+      "location": "chopin_liszt/Liszt/Klajoniu metai/Tevynes ilgesys (pradzia).mp3"
+    },
+    {
+      "name": "Liszt Klajoniu metai Tevynes ilgesys (tesinys)",
+      "location": "chopin_liszt/Liszt/Klajoniu metai/Tevynes ilgesys (tesinys).mp3"
+    },
+    {
+      "name": "Liszt Koncertas fortepijonui Nr.1 Izanga",
+      "location": "chopin_liszt/Liszt/Koncertas fortepijonui Nr.1/01_Izanga.mp3"
+    },
+    {
+      "name": "Liszt Koncertas fortepijonui Nr.1 Salutine tema",
+      "location": "chopin_liszt/Liszt/Koncertas fortepijonui Nr.1/02_Salutine tema.mp3"
+    },
+    {
+      "name": "Liszt Koncertas fortepijonui Nr.1 II padala",
+      "location": "chopin_liszt/Liszt/Koncertas fortepijonui Nr.1/03_II padala.mp3"
+    },
+    {
+      "name": "Liszt Koncertas fortepijonui Nr.1 III padala",
+      "location": "chopin_liszt/Liszt/Koncertas fortepijonui Nr.1/04_III padala.mp3"
+    },
+    {
+      "name": "Liszt Koncertas fortepijonui Nr.1 IV padala",
+      "location": "chopin_liszt/Liszt/Koncertas fortepijonui Nr.1/05_IV padala.mp3"
+    },
+    {
+      "name": "Liszt Preliudai Izanga",
+      "location": "chopin_liszt/Liszt/Preliudai/01_Izanga.mp3"
+    },
+    {
+      "name": "Liszt Preliudai Pagrindine tema",
+      "location": "chopin_liszt/Liszt/Preliudai/02_Pagrindine tema.mp3"
+    },
+    {
+      "name": "Liszt Preliudai Jungiamoji tema",
+      "location": "chopin_liszt/Liszt/Preliudai/03_Jungiamoji tema.mp3"
+    },
+    {
+      "name": "Liszt Preliudai Salutine tema",
+      "location": "chopin_liszt/Liszt/Preliudai/04_Salutine tema.mp3"
+    },
+    {
+      "name": "Liszt Preliudai Repriza",
+      "location": "chopin_liszt/Liszt/Preliudai/05_Repriza.mp3"
+    },
+    {
+      "name": "Liszt Rapsodijos Nr.2 cis-moll 01 izanga",
+      "location": "chopin_liszt/Liszt/Rapsodijos/Nr.2 cis-moll/01 izanga.mp3"
+    },
+    {
+      "name": "Liszt Rapsodijos Nr.2 cis-moll 02 tema",
+      "location": "chopin_liszt/Liszt/Rapsodijos/Nr.2 cis-moll/02 tema.mp3"
+    },
+    {
+      "name": "Liszt Rapsodijos Nr.2 cis-moll 03 cardas",
+      "location": "chopin_liszt/Liszt/Rapsodijos/Nr.2 cis-moll/03 cardas.mp3"
+    },
+    {
+      "name": "Liszt Rapsodijos Nr.2 cis-moll 04 friska",
+      "location": "chopin_liszt/Liszt/Rapsodijos/Nr.2 cis-moll/04 friska.mp3"
+    },
+    {
+      "name": "Liszt Transkripcijos Schubert_Giriu karalius",
+      "location": "chopin_liszt/Liszt/Transkripcijos/Schubert_Giriu karalius.mp3"
+    }
+  ]
+}
