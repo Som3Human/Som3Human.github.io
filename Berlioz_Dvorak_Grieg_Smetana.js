@@ -4,7 +4,7 @@ const audioPlayer = document.getElementById('audioPlayer');
 const nameInput = document.getElementById('nameInput');
 const submitBtn = document.getElementById('submitBtn');
 const footer = document.createElement('footer');
-const version = '1.0'; // Update with your desired version
+const version = '2.0'; // Update with your desired version
 
 let songList;
 let currentSong;
@@ -13,12 +13,17 @@ let currentSong;
 fetch('Berlioz_Dvorak_Grieg_Smetana.json')
     .then(response => response.json())
     .then(data => {
-        songList = data.songs;
+        // Add an initial weight to each song
+        songList = data.songs.map(song => ({
+            ...song,
+            weight: 1 // start with equal weights
+        }));
     })
     .catch(error => {
         console.error('Error fetching song list:', error);
         showMessage('Error fetching song list. Please try again later.', 'error');
     });
+
 
 // Function to display messages
 function showMessage(message, type = 'info') {
@@ -33,15 +38,37 @@ function playRandomSong() {
         return;
     }
 
-    const randomIndex = Math.floor(Math.random() * songList.length);
-    currentSong = songList[randomIndex];
+    // Calculate total weight
+    const totalWeight = songList.reduce((sum, song) => sum + song.weight, 0);
+    if (totalWeight === 0) {
+        showMessage('All songs have zero weight.', 'error');
+        return;
+    }
+
+    // Pick a song based on weighted randomness
+    let threshold = Math.random() * totalWeight;
+    let selectedIndex = 0;
+
+    for (let i = 0; i < songList.length; i++) {
+        threshold -= songList[i].weight;
+        if (threshold <= 0) {
+            selectedIndex = i;
+            break;
+        }
+    }
+
+    currentSong = songList[selectedIndex];
+
+    // Reduce the song's weight, but don't let it fall below a minimum value
+    songList[selectedIndex].weight = Math.max(songList[selectedIndex].weight * 0.5, 0.1);
 
     audioPlayer.src = currentSong.location;
     audioPlayer.play();
 
-    nameInput.value = ''; // Clear the input field
-    showMessage(''); // Clear the showMessage dialog
+    nameInput.value = '';
+    showMessage('');
 }
+
 
 // Function to check the answer
 function checkAnswer() {
