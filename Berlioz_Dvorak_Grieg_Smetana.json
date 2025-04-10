@@ -1,0 +1,148 @@
+{
+  "songs": [
+    {
+      "name": "Berlioz Fantastine simfonija Id. Pradzia",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Berlioz/Fantastine simfonija/01_Id. Pradzia.mp3"
+    },
+    {
+      "name": "Berlioz Fantastine simfonija Id. Mylimosios tema",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Berlioz/Fantastine simfonija/02_Id. Mylimosios tema.mp3"
+    },
+    {
+      "name": "Berlioz Fantastine simfonija IId. Pradzia",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Berlioz/Fantastine simfonija/03_IId. Pradzia.mp3"
+    },
+    {
+      "name": "Berlioz Fantastine simfonija IId. Mylimosios tema",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Berlioz/Fantastine simfonija/04_IId. Mylimosios tema.mp3"
+    },
+    {
+      "name": "Berlioz Fantastine simfonija IIId. Pradzia",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Berlioz/Fantastine simfonija/05_IIId. Pradzia.mp3"
+    },
+    {
+      "name": "Berlioz Fantastine simfonija IIId. Repriza",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Berlioz/Fantastine simfonija/06_IIId. Repriza.mp3"
+    },
+    {
+      "name": "Berlioz Fantastine simfonija IVd",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Berlioz/Fantastine simfonija/07_IVd.mp3"
+    },
+    {
+      "name": "Berlioz Fantastine simfonija Vd. Pradzia",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Berlioz/Fantastine simfonija/08_Vd. Pradzia.mp3"
+    },
+    {
+      "name": "Berlioz Fantastine simfonija Vd. Mylimosios tema",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Berlioz/Fantastine simfonija/09_Vd. Mylimosios tema.mp3"
+    },
+    {
+      "name": "Berlioz Fantastine simfonija Vd. Dies Irae",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Berlioz/Fantastine simfonija/10_Vd. Dies Irae.mp3"
+    },
+    {
+      "name": "Dvorak Simfonija Nr.9 I d. Izanga",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Dvorak/Simfonija Nr.9/01_I d. Izanga.mp3"
+    },
+    {
+      "name": "Dvorak Simfonija Nr.9 02 I d. Pagrindine tema",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Dvorak/Simfonija Nr.9/02 I d. Pagrindine tema.mp3"
+    },
+    {
+      "name": "Dvorak Simfonija Nr.9 I d. Salutine t.",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Dvorak/Simfonija Nr.9/03_I d. Salutine t..mp3"
+    },
+    {
+      "name": "Dvorak Simfonija Nr.9 Id.  Baigiamoji tema",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Dvorak/Simfonija Nr.9/04_Id.  Baigiamoji tema.mp3"
+    },
+    {
+      "name": "Dvorak Simfonija Nr.9 II dalis",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Dvorak/Simfonija Nr.9/05_II dalis.mp3"
+    },
+    {
+      "name": "Dvorak Slavu sokis e-moll op.72 Nr.2",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Dvorak/Slavu sokis e-moll op.72 Nr.2.mp3"
+    },
+    {
+      "name": "Dvorak Slavu sokis g-moll op.46 Nr.8",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Dvorak/Slavu sokis g-moll op.46 Nr.8.mp3"
+    },
+    {
+      "name": "Grieg Dainos Myliu tave",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Dainos/Myliu tave.mp3"
+    },
+    {
+      "name": "Grieg Koncertas fortepijonui Id. Izanga ir pagr. tema",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Koncertas fortepijonui/01_Id. Izanga ir pagr. tema.mp3"
+    },
+    {
+      "name": "Grieg Koncertas fortepijonui Id. Pagrindine t. fortepijonui",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Koncertas fortepijonui/02_Id. Pagrindine t. fortepijonui.mp3"
+    },
+    {
+      "name": "Grieg Koncertas fortepijonui Id.Salutine tema",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Koncertas fortepijonui/03_Id.Salutine tema.mp3"
+    },
+    {
+      "name": "Grieg Koncertas fortepijonui IId",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Koncertas fortepijonui/04_IId.mp3"
+    },
+    {
+      "name": "Grieg Koncertas fortepijonui IIId",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Koncertas fortepijonui/05_IIId.mp3"
+    },
+    {
+      "name": "Grieg Peras Giuntas Rytas",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Peras Giuntas/01_Rytas.mp3"
+    },
+    {
+      "name": "Grieg Peras Giuntas Ozes mirtis",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Peras Giuntas/02_Ozes mirtis.mp3"
+    },
+    {
+      "name": "Grieg Peras Giuntas Anitros sokis",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Peras Giuntas/03_Anitros sokis.mp3"
+    },
+    {
+      "name": "Grieg Peras Giuntas Kalnu karaliaus oloje",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Peras Giuntas/04_Kalnu karaliaus oloje.mp3"
+    },
+    {
+      "name": "Grieg Peras Giuntas Sulveigos daina",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Peras Giuntas/05_Sulveigos daina.mp3"
+    },
+    {
+      "name": "Grieg Peras Giuntas Sulveigos dainos vidurys",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Peras Giuntas/06_Sulveigos dainos vidurys.mp3"
+    },
+    {
+      "name": "Grieg Pjeses fortepijonui Drugelis (op.43-1)",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Pjeses fortepijonui/Drugelis (op.43-1).mp3"
+    },
+    {
+      "name": "Grieg Pjeses fortepijonui Nykstuku eisena (op.54-3)",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Pjeses fortepijonui/Nykstuku eisena (op.54-3).mp3"
+    },
+    {
+      "name": "Grieg Pjeses fortepijonui Pavasariui (op.43-6)",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Pjeses fortepijonui/Pavasariui (op.43-6).mp3"
+    },
+    {
+      "name": "Grieg Pjeses fortepijonui Vestuviu diena Trolhaugene (op.65-6)",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Grieg/Pjeses fortepijonui/Vestuviu diena Trolhaugene (op.65-6).mp3"
+    },
+    {
+      "name": "Smetana Vltava 01 Pradzia",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Smetana/Vltava/01 Pradzia.mp3"
+    },
+    {
+      "name": "Smetana Vltava 02 Pagrindine tema",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Smetana/Vltava/02 Pagrindine tema.mp3"
+    },
+    {
+      "name": "Smetana Vltava 03 Vidurys",
+      "location": "Berlioz_Dvorak_Grieg_Smetana/Smetana/Vltava/03 Vidurys.mp3"
+    }
+  ]
+}
