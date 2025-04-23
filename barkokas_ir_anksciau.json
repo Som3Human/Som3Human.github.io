@@ -1,0 +1,136 @@
+{
+  "songs": [
+    {
+      "name": "1. Viduramziai 1-1-1. Grigaliskasis choralas Gloria XV",
+      "location": "barkokas_ir_anksciau/1. Viduramziai/1-1-1. Grigaliskasis choralas Gloria XV.mp3"
+    },
+    {
+      "name": "1. Viduramziai 1-1-2. Grigaliskasis choralas Salve Regina",
+      "location": "barkokas_ir_anksciau/1. Viduramziai/1-1-2. Grigaliskasis choralas Salve Regina.mp3"
+    },
+    {
+      "name": "1. Viduramziai 1-2-1. Organumas_Nos qui vivimus",
+      "location": "barkokas_ir_anksciau/1. Viduramziai/1-2-1. Organumas_Nos qui vivimus.mp3"
+    },
+    {
+      "name": "1. Viduramziai 1-2-2. Organumas_Regi regum",
+      "location": "barkokas_ir_anksciau/1. Viduramziai/1-2-2. Organumas_Regi regum.mp3"
+    },
+    {
+      "name": "1. Viduramziai 1-2-3. Perotin Organumas",
+      "location": "barkokas_ir_anksciau/1. Viduramziai/1-2-3. Perotin Organumas.mp3"
+    },
+    {
+      "name": "1. Viduramziai 1-3. Sekvencija Dies Irae",
+      "location": "barkokas_ir_anksciau/1. Viduramziai/1-3. Sekvencija Dies Irae.mp3"
+    },
+    {
+      "name": "2-6. Renesansas - Barokas 2. Lasso_Aidas",
+      "location": "barkokas_ir_anksciau/2-6. Renesansas - Barokas/2. Lasso_Aidas.mp3"
+    },
+    {
+      "name": "2-6. Renesansas - Barokas 3-1. Palestrina _Pope Marcellus Mass_Agnus Dei",
+      "location": "barkokas_ir_anksciau/2-6. Renesansas - Barokas/3-1. Palestrina _Pope Marcellus Mass_Agnus Dei.mp3"
+    },
+    {
+      "name": "2-6. Renesansas - Barokas 3-2. Palestrina_Sicut cervus",
+      "location": "barkokas_ir_anksciau/2-6. Renesansas - Barokas/3-2. Palestrina_Sicut cervus.mp3"
+    },
+    {
+      "name": "2-6. Renesansas - Barokas 4-1. Monteverdi_Orfejus_Izanga (Tokata)",
+      "location": "barkokas_ir_anksciau/2-6. Renesansas - Barokas/4-1. Monteverdi_Orfejus_Izanga (Tokata).mp3"
+    },
+    {
+      "name": "2-6. Renesansas - Barokas 4-2. Monteverdi_Madrigalas_Cruda Amarilli",
+      "location": "barkokas_ir_anksciau/2-6. Renesansas - Barokas/4-2. Monteverdi_Madrigalas_Cruda Amarilli.mp3"
+    },
+    {
+      "name": "2-6. Renesansas - Barokas 5. Rameau_Siuita klavesinui Nr.5 a-moll_Sarabande",
+      "location": "barkokas_ir_anksciau/2-6. Renesansas - Barokas/5. Rameau_Siuita klavesinui Nr.5 a-moll_Sarabande.mp3"
+    },
+    {
+      "name": "2-6. Renesansas - Barokas 6. Vivaldi_Metu laikai_Pavasaris I d",
+      "location": "barkokas_ir_anksciau/2-6. Renesansas - Barokas/6. Vivaldi_Metu laikai_Pavasaris I d.mp3"
+    },
+    {
+      "name": "7. Bach 7-1-1. Bach_Tokata ir fuga d-moll_Tokata",
+      "location": "barkokas_ir_anksciau/7. Bach/7-1-1. Bach_Tokata ir fuga d-moll_Tokata.mp3"
+    },
+    {
+      "name": "7. Bach 7-1-2. Bach_Tokata ir fuga d-moll_Fuga",
+      "location": "barkokas_ir_anksciau/7. Bach/7-1-2. Bach_Tokata ir fuga d-moll_Fuga.mp3"
+    },
+    {
+      "name": "7. Bach 7-2. Bach_Choralinis preliudas f-moll_Ich ruf zu dir, BWV 639",
+      "location": "barkokas_ir_anksciau/7. Bach/7-2. Bach_Choralinis preliudas f-moll_Ich ruf zu dir, BWV 639.mp3"
+    },
+    {
+      "name": "7. Bach 7-3-1. Bach_GTK I C-dur preliudas",
+      "location": "barkokas_ir_anksciau/7. Bach/7-3-1. Bach_GTK I C-dur preliudas.mp3"
+    },
+    {
+      "name": "7. Bach 7-3-2. Bach_GTK I C-dur fuga",
+      "location": "barkokas_ir_anksciau/7. Bach/7-3-2. Bach_GTK I C-dur fuga.mp3"
+    },
+    {
+      "name": "7. Bach 7-3-3. Bach_GTK I c-moll preliudas",
+      "location": "barkokas_ir_anksciau/7. Bach/7-3-3. Bach_GTK I c-moll preliudas.mp3"
+    },
+    {
+      "name": "7. Bach 7-3-4. Bach_GTK I c-moll fuga",
+      "location": "barkokas_ir_anksciau/7. Bach/7-3-4. Bach_GTK I c-moll fuga.mp3"
+    },
+    {
+      "name": "7. Bach 7-4-1. Bach_Chromatine fantazija ir fuga d-moll_Fantazija",
+      "location": "barkokas_ir_anksciau/7. Bach/7-4-1. Bach_Chromatine fantazija ir fuga d-moll_Fantazija.mp3"
+    },
+    {
+      "name": "7. Bach 7-4-2. Bach_Chromatine fantazija ir fuga d-moll_Fuga",
+      "location": "barkokas_ir_anksciau/7. Bach/7-4-2. Bach_Chromatine fantazija ir fuga d-moll_Fuga.mp3"
+    },
+    {
+      "name": "7. Bach 7-5-1. Bach_Misios h-moll_Kyrie ",
+      "location": "barkokas_ir_anksciau/7. Bach/7-5-1. Bach_Misios h-moll_Kyrie .mp3"
+    },
+    {
+      "name": "7. Bach 7-5-2. Bach_Misios h-moll_Agnus Dei",
+      "location": "barkokas_ir_anksciau/7. Bach/7-5-2. Bach_Misios h-moll_Agnus Dei.mp3"
+    },
+    {
+      "name": "7. Bach 7-6. Bach_Brandenburgo koncertas Nr.3_I dalis",
+      "location": "barkokas_ir_anksciau/7. Bach/7-6. Bach_Brandenburgo koncertas Nr.3_I dalis.mp3"
+    },
+    {
+      "name": "8. Handel 8-1. Handel_Oratorija Mesijas- Aleliuja",
+      "location": "barkokas_ir_anksciau/8. Handel/8-1. Handel_Oratorija Mesijas- Aleliuja.mp3"
+    },
+    {
+      "name": "8. Handel 8-2. Handel_Concerto grosso op.6 nr.6, g-moll_III dalis",
+      "location": "barkokas_ir_anksciau/8. Handel/8-2. Handel_Concerto grosso op.6 nr.6, g-moll_III dalis.mp3"
+    },
+    {
+      "name": "8. Handel 8-3. Handel_Siuita g-moll_Pasakalija",
+      "location": "barkokas_ir_anksciau/8. Handel/8-3. Handel_Siuita g-moll_Pasakalija.mp3"
+    },
+    {
+      "name": "8. Handel 8-4. Handel_Fejerverku muzika_Uvertiura",
+      "location": "barkokas_ir_anksciau/8. Handel/8-4. Handel_Fejerverku muzika_Uvertiura.mp3"
+    },
+    {
+      "name": "9. Gluck 9-1-1. Gluck_Op Orfejas ir Euridike_2v_Orfejo ir furiju scena-1",
+      "location": "barkokas_ir_anksciau/9. Gluck/9-1-1. Gluck_Op Orfejas ir Euridike_2v_Orfejo ir furiju scena-1.mp3"
+    },
+    {
+      "name": "9. Gluck 9-1-2. Gluck_Op Orfejas ir Euridike_2v_Orfejo ir furiju scena-2",
+      "location": "barkokas_ir_anksciau/9. Gluck/9-1-2. Gluck_Op Orfejas ir Euridike_2v_Orfejo ir furiju scena-2.mp3"
+    },
+    {
+      "name": "9. Gluck 9-2. Gluck_Op Orfejas ir Euridike_2v_Fleitos solo",
+      "location": "barkokas_ir_anksciau/9. Gluck/9-2. Gluck_Op Orfejas ir Euridike_2v_Fleitos solo.mp3"
+    },
+    {
+      "name": "9. Gluck 9-3. Gluck_Op Orfejas ir Euridike_3v_Orfejo arija",
+      "location": "barkokas_ir_anksciau/9. Gluck/9-3. Gluck_Op Orfejas ir Euridike_3v_Orfejo arija.mp3"
+    }
+  ]
+}
