@@ -11,10 +11,27 @@
     #player { width: 1px; height: 1px; overflow: hidden; }
     label { display: inline-flex; align-items: center; gap: 5px; margin: 10px; }
     select { margin: 10px; }
+    button { margin: 5px; }
+    #importExportPanel {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
   <h1>🎵 YouTube Muzikos Viktorina</h1>
+
+  <div id="importExportPanel">
+    <button onclick="exportPlaylists()">📤 Eksportuoti JSON</button>
+    <input type="file" id="importFile" style="display:none">
+    <button onclick="importPlaylists()">📥 Importuoti JSON</button>
+  </div>
 
   <p>Pasirink grojaraštį arba įkelk savo:</p>
   <select id="presetList" onchange="loadPreset()">
@@ -36,7 +53,7 @@
     <input type="checkbox" id="randomTime"> Groti nuo atsitiktinės vietos
   </label><br>
 
-  <button onclick="startQuiz()">Pradėti viktoriną</button>
+  <button id="playStopBtn" onclick="togglePlay()">▶️ Groti / Sustabdyti</button>
   <button onclick="nextSong()">Kitas kūrinys</button>
 
   <div id="quiz">
@@ -46,7 +63,6 @@
     <p id="result"></p>
   </div>
 
-  <!-- YouTube grotuvė -->
   <div id="player"></div>
 
   <script>
@@ -54,16 +70,15 @@
     let songs = [];
     let currentSong = null;
     let playerReady = false;
+    let isPlaying = false;
 
-    // 🔹 Numatyti grojaraščiai
     const defaultPlaylists = {
       "Bandymas": [
         "https://youtu.be/Lxj4WnvBH8E?si=TOtTYu2KLZlhtcV3",
-        "https://youtu.be/To1speljU44?si=ID0rNxgwUJk8Rxpf"  
+        "https://youtu.be/To1speljU44?si=ID0rNxgwUJk8Rxpf"
       ]
     };
 
-    // Įkeliam YT API
     let tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     document.head.appendChild(tag);
@@ -80,13 +95,14 @@
     }
 
     function onPlayerStateChange(event) {
-      if (event.data === YT.PlayerState.PLAYING) {
-        let videoData = player.getVideoData();
-        console.log("Grojama:", videoData.title);
-      }
+      isPlaying = event.data === YT.PlayerState.PLAYING;
+      updatePlayStopBtn();
     }
 
-    // Įkelt failą
+    function updatePlayStopBtn() {
+      document.getElementById("playStopBtn").textContent = isPlaying ? "⏸ Sustabdyti" : "▶️ Groti";
+    }
+
     document.getElementById('fileInput').addEventListener('change', function(e) {
       let file = e.target.files[0];
       if (!file) return;
@@ -97,18 +113,11 @@
       reader.readAsText(file);
     });
 
-    // Išsaugoti grojaraštį
     function savePlaylist() {
       let name = document.getElementById("playlistName").value.trim();
       let text = document.getElementById('links').value.trim();
-      if (!name) {
-        alert("Įrašyk grojaraščio pavadinimą.");
-        return;
-      }
-      if (!text) {
-        alert("Nėra nuorodų, kurias išsaugoti.");
-        return;
-      }
+      if (!name) { alert("Įrašyk grojaraščio pavadinimą."); return; }
+      if (!text) { alert("Nėra nuorodų, kurias išsaugoti."); return; }
       let playlists = JSON.parse(localStorage.getItem("playlists") || "{}");
       playlists[name] = text.split(/\s+/).filter(url => extractVideoId(url));
       localStorage.setItem("playlists", JSON.stringify(playlists));
@@ -117,14 +126,11 @@
       document.getElementById("playlistName").value = "";
     }
 
-    // Atnaujinti sąrašą (numatyti + išsaugoti)
     function refreshPlaylists() {
       let userPlaylists = JSON.parse(localStorage.getItem("playlists") || "{}");
       let allPlaylists = { ...defaultPlaylists, ...userPlaylists };
-
       let select = document.getElementById("presetList");
       select.innerHTML = '<option value="">-- Pasirink sąrašą --</option>';
-
       for (let name in allPlaylists) {
         let option = document.createElement("option");
         option.value = name;
@@ -136,10 +142,8 @@
     function loadPreset() {
       let choice = document.getElementById("presetList").value;
       if (!choice) return;
-
       let userPlaylists = JSON.parse(localStorage.getItem("playlists") || "{}");
       let allPlaylists = { ...defaultPlaylists, ...userPlaylists };
-
       if (allPlaylists[choice]) {
         document.getElementById('links').value = allPlaylists[choice].join("\n");
       }
@@ -147,15 +151,9 @@
 
     function deletePlaylist() {
       let choice = document.getElementById("presetList").value;
-      if (!choice) {
-        alert("Nepasirinktas joks grojaraštis.");
-        return;
-      }
+      if (!choice) { alert("Nepasirinktas joks grojaraštis."); return; }
       let userPlaylists = JSON.parse(localStorage.getItem("playlists") || "{}");
-      if (defaultPlaylists[choice]) {
-        alert("Numatytų grojaraščių ištrinti negalima.");
-        return;
-      }
+      if (defaultPlaylists[choice]) { alert("Numatytų grojaraščių ištrinti negalima."); return; }
       if (userPlaylists[choice]) {
         delete userPlaylists[choice];
         localStorage.setItem("playlists", JSON.stringify(userPlaylists));
@@ -168,58 +166,51 @@
     function startQuiz() {
       let text = document.getElementById('links').value.trim();
       songs = text.split(/\s+/).filter(url => extractVideoId(url));
-      if (songs.length === 0) {
-        alert("Nerasta tinkamų YouTube nuorodų!");
-        return;
-      }
+      if (songs.length === 0) { alert("Nerasta dainų!"); return; }
       document.getElementById('quiz').style.display = "block";
       playRandomSong();
     }
 
     function nextSong() {
-      if (songs.length === 0) {
-        alert("Nėra įkeltų dainų!");
-        return;
-      }
+      if (songs.length === 0) { alert("Nėra įkeltų dainų!"); return; }
       playRandomSong();
     }
 
     function playRandomSong() {
-      if (!playerReady) {
-        alert("Grotuvas dar nepasiruošęs. Palauk truputį.");
-        return;
-      }
+      if (!playerReady) { alert("Grotuvas dar nepasiruošęs."); return; }
       currentSong = songs[Math.floor(Math.random() * songs.length)];
       let videoId = extractVideoId(currentSong);
-
       let duration = player.getDuration();
       let useRandom = document.getElementById("randomTime").checked;
       let startTime = 0;
-
-      if (useRandom && duration > 0) {
-        startTime = Math.floor(Math.random() * Math.max(1, duration - 30));
-      }
-
-      player.loadVideoById({
-        videoId: videoId,
-        startSeconds: startTime
-      });
-
+      if (useRandom && duration > 0) startTime = Math.floor(Math.random() * Math.max(1, duration - 30));
+      player.loadVideoById({ videoId: videoId, startSeconds: startTime });
       document.getElementById('result').innerHTML = "";
       document.getElementById('guess').value = "";
+      isPlaying = true; updatePlayStopBtn();
+    }
+
+    function togglePlay() {
+      if (!playerReady) return;
+      let text = document.getElementById('links').value.trim();
+      let newSongs = text.split(/\s+/).filter(url => extractVideoId(url));
+      if (!currentSong || songs.join() !== newSongs.join()) {
+        songs = newSongs;
+        if (songs.length === 0) { alert("Nerasta dainų!"); return; }
+        startQuiz();
+      } else if (isPlaying) {
+        player.pauseVideo();
+      } else {
+        player.playVideo();
+      }
     }
 
     function extractVideoId(url) {
       try {
         let u = new URL(url);
-        if (u.hostname.includes("youtu.be")) {
-          return u.pathname.substring(1);
-        } else if (u.searchParams.get("v")) {
-          return u.searchParams.get("v");
-        }
-      } catch {
-        return null;
-      }
+        if (u.hostname.includes("youtu.be")) return u.pathname.substring(1);
+        else if (u.searchParams.get("v")) return u.searchParams.get("v");
+      } catch { return null; }
       return null;
     }
 
@@ -229,6 +220,42 @@
       let realTitle = videoData.title || "(nežinomas pavadinimas)";
       document.getElementById('result').innerHTML =
         "Tavo spėjimas: <b>" + guess + "</b><br>Teisingas atsakymas: <b>" + realTitle + "</b>";
+    }
+
+    function exportPlaylists() {
+      let playlists = JSON.parse(localStorage.getItem("playlists") || "{}");
+      let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(playlists));
+      let dlAnchor = document.createElement('a');
+      dlAnchor.setAttribute("href", dataStr);
+      dlAnchor.setAttribute("download", "playlists.json");
+      document.body.appendChild(dlAnchor);
+      dlAnchor.click();
+      dlAnchor.remove();
+    }
+
+    document.getElementById('importFile').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const imported = JSON.parse(e.target.result);
+          if (typeof imported === "object") {
+            let playlists = JSON.parse(localStorage.getItem("playlists") || "{}");
+            playlists = { ...playlists, ...imported };
+            localStorage.setItem("playlists", JSON.stringify(playlists));
+            refreshPlaylists();
+            alert("Grojaraščiai sėkmingai importuoti!");
+          } else alert("Failas netinkamo formato.");
+        } catch {
+          alert("Nepavyko importuoti JSON failo.");
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    function importPlaylists() {
+      document.getElementById('importFile').click();
     }
   </script>
 </body>
