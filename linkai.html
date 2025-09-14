@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Muzikos Viktorina</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin: 40px; }
+    textarea { width: 80%; height: 120px; margin-bottom: 10px; }
+    input[type="file"], input[type="text"] { margin-bottom: 10px; }
+    #quiz { margin-top: 20px; display: none; }
+    #player { width: 1px; height: 1px; overflow: hidden; }
+    label { display: inline-flex; align-items: center; gap: 5px; margin: 10px; }
+    select { margin: 10px; }
+  </style>
+</head>
+<body>
+  <h1>🎵 YouTube Muzikos Viktorina</h1>
+
+  <p>Pasirink grojaraštį arba įkelk savo:</p>
+  <select id="presetList" onchange="loadPreset()">
+    <option value="">-- Pasirink sąrašą --</option>
+  </select>
+  <button onclick="deletePlaylist()">🗑 Ištrinti (tik savo)</button>
+  <br><br>
+
+  <p>Arba įklijuok YouTube nuorodas (po vieną eilutėje) arba įkelk .txt failą:</p>
+  <textarea id="links"></textarea><br>
+  <input type="file" id="fileInput"><br>
+
+  <p>Išsaugok kaip naują grojaraštį:</p>
+  <input type="text" id="playlistName" placeholder="Grojaraščio pavadinimas">
+  <button onclick="savePlaylist()">💾 Išsaugoti</button>
+  <br><br>
+
+  <label>
+    <input type="checkbox" id="randomTime"> Groti nuo atsitiktinės vietos
+  </label><br>
+
+  <button onclick="startQuiz()">Pradėti viktoriną</button>
+  <button onclick="nextSong()">Kitas kūrinys</button>
+
+  <div id="quiz">
+    <p>Dabar groja daina... Atspėk jos pavadinimą!</p>
+    <input type="text" id="guess" placeholder="Tavo spėjimas">
+    <button onclick="checkGuess()">Pateikti</button>
+    <p id="result"></p>
+  </div>
+
+  <!-- YouTube grotuvė -->
+  <div id="player"></div>
+
+  <script>
+    let player;
+    let songs = [];
+    let currentSong = null;
+    let playerReady = false;
+
+    // 🔹 Numatyti grojaraščiai
+    const defaultPlaylists = {
+      "Bandymas": [
+        "https://youtu.be/Lxj4WnvBH8E?si=TOtTYu2KLZlhtcV3",
+        "https://youtu.be/To1speljU44?si=ID0rNxgwUJk8Rxpf"  
+      ]
+    };
+
+    // Įkeliam YT API
+    let tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '1',
+        width: '1',
+        events: {
+          'onReady': () => { playerReady = true; refreshPlaylists(); },
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING) {
+        let videoData = player.getVideoData();
+        console.log("Grojama:", videoData.title);
+      }
+    }
+
+    // Įkelt failą
+    document.getElementById('fileInput').addEventListener('change', function(e) {
+      let file = e.target.files[0];
+      if (!file) return;
+      let reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('links').value = e.target.result;
+      };
+      reader.readAsText(file);
+    });
+
+    // Išsaugoti grojaraštį
+    function savePlaylist() {
+      let name = document.getElementById("playlistName").value.trim();
+      let text = document.getElementById('links').value.trim();
+      if (!name) {
+        alert("Įrašyk grojaraščio pavadinimą.");
+        return;
+      }
+      if (!text) {
+        alert("Nėra nuorodų, kurias išsaugoti.");
+        return;
+      }
+      let playlists = JSON.parse(localStorage.getItem("playlists") || "{}");
+      playlists[name] = text.split(/\s+/).filter(url => extractVideoId(url));
+      localStorage.setItem("playlists", JSON.stringify(playlists));
+      refreshPlaylists();
+      alert("Išsaugotas grojaraštis: " + name);
+      document.getElementById("playlistName").value = "";
+    }
+
+    // Atnaujinti sąrašą (numatyti + išsaugoti)
+    function refreshPlaylists() {
+      let userPlaylists = JSON.parse(localStorage.getItem("playlists") || "{}");
+      let allPlaylists = { ...defaultPlaylists, ...userPlaylists };
+
+      let select = document.getElementById("presetList");
+      select.innerHTML = '<option value="">-- Pasirink sąrašą --</option>';
+
+      for (let name in allPlaylists) {
+        let option = document.createElement("option");
+        option.value = name;
+        option.textContent = name;
+        select.appendChild(option);
+      }
+    }
+
+    function loadPreset() {
+      let choice = document.getElementById("presetList").value;
+      if (!choice) return;
+
+      let userPlaylists = JSON.parse(localStorage.getItem("playlists") || "{}");
+      let allPlaylists = { ...defaultPlaylists, ...userPlaylists };
+
+      if (allPlaylists[choice]) {
+        document.getElementById('links').value = allPlaylists[choice].join("\n");
+      }
+    }
+
+    function deletePlaylist() {
+      let choice = document.getElementById("presetList").value;
+      if (!choice) {
+        alert("Nepasirinktas joks grojaraštis.");
+        return;
+      }
+      let userPlaylists = JSON.parse(localStorage.getItem("playlists") || "{}");
+      if (defaultPlaylists[choice]) {
+        alert("Numatytų grojaraščių ištrinti negalima.");
+        return;
+      }
+      if (userPlaylists[choice]) {
+        delete userPlaylists[choice];
+        localStorage.setItem("playlists", JSON.stringify(userPlaylists));
+        refreshPlaylists();
+        alert("Ištrintas grojaraštis: " + choice);
+        document.getElementById('links').value = "";
+      }
+    }
+
+    function startQuiz() {
+      let text = document.getElementById('links').value.trim();
+      songs = text.split(/\s+/).filter(url => extractVideoId(url));
+      if (songs.length === 0) {
+        alert("Nerasta tinkamų YouTube nuorodų!");
+        return;
+      }
+      document.getElementById('quiz').style.display = "block";
+      playRandomSong();
+    }
+
+    function nextSong() {
+      if (songs.length === 0) {
+        alert("Nėra įkeltų dainų!");
+        return;
+      }
+      playRandomSong();
+    }
+
+    function playRandomSong() {
+      if (!playerReady) {
+        alert("Grotuvas dar nepasiruošęs. Palauk truputį.");
+        return;
+      }
+      currentSong = songs[Math.floor(Math.random() * songs.length)];
+      let videoId = extractVideoId(currentSong);
+
+      let duration = player.getDuration();
+      let useRandom = document.getElementById("randomTime").checked;
+      let startTime = 0;
+
+      if (useRandom && duration > 0) {
+        startTime = Math.floor(Math.random() * Math.max(1, duration - 30));
+      }
+
+      player.loadVideoById({
+        videoId: videoId,
+        startSeconds: startTime
+      });
+
+      document.getElementById('result').innerHTML = "";
+      document.getElementById('guess').value = "";
+    }
+
+    function extractVideoId(url) {
+      try {
+        let u = new URL(url);
+        if (u.hostname.includes("youtu.be")) {
+          return u.pathname.substring(1);
+        } else if (u.searchParams.get("v")) {
+          return u.searchParams.get("v");
+        }
+      } catch {
+        return null;
+      }
+      return null;
+    }
+
+    function checkGuess() {
+      let guess = document.getElementById('guess').value.trim();
+      let videoData = player.getVideoData();
+      let realTitle = videoData.title || "(nežinomas pavadinimas)";
+      document.getElementById('result').innerHTML =
+        "Tavo spėjimas: <b>" + guess + "</b><br>Teisingas atsakymas: <b>" + realTitle + "</b>";
+    }
+  </script>
+</body>
+</html>
