@@ -1,0 +1,72 @@
+{
+  "songs": [
+    {
+      "name": "Brahms Koncertas sm. ir orkestrui I d ork izanga",
+      "location": "Brahms_Puccini/Brahms/Koncertas sm. ir orkestrui/01_I d ork izanga.mp3"
+    },
+    {
+      "name": "Brahms Koncertas sm. ir orkestrui I d Salutine tema",
+      "location": "Brahms_Puccini/Brahms/Koncertas sm. ir orkestrui/02_I d Salutine tema.mp3"
+    },
+    {
+      "name": "Brahms Koncertas sm. ir orkestrui I d Pagrindine tema",
+      "location": "Brahms_Puccini/Brahms/Koncertas sm. ir orkestrui/03_I d Pagrindine tema.mp3"
+    },
+    {
+      "name": "Brahms Koncertas sm. ir orkestrui I d Baigiamoji tema",
+      "location": "Brahms_Puccini/Brahms/Koncertas sm. ir orkestrui/04_I d Baigiamoji tema.mp3"
+    },
+    {
+      "name": "Brahms Koncertas sm. ir orkestrui II dalis",
+      "location": "Brahms_Puccini/Brahms/Koncertas sm. ir orkestrui/05_II dalis.mp3"
+    },
+    {
+      "name": "Brahms Koncertas sm. ir orkestrui III dalis",
+      "location": "Brahms_Puccini/Brahms/Koncertas sm. ir orkestrui/06_III dalis.mp3"
+    },
+    {
+      "name": "Brahms Simfonija Nr.4 I d. Pagr. tema",
+      "location": "Brahms_Puccini/Brahms/Simfonija Nr.4/01_I d. Pagr. tema.mp3"
+    },
+    {
+      "name": "Brahms Simfonija Nr.4 I d.Salutine tema",
+      "location": "Brahms_Puccini/Brahms/Simfonija Nr.4/02_I d.Salutine tema.mp3"
+    },
+    {
+      "name": "Brahms Simfonija Nr.4 I d.Salutine tema- 2",
+      "location": "Brahms_Puccini/Brahms/Simfonija Nr.4/03_I d.Salutine tema- 2.mp3"
+    },
+    {
+      "name": "Brahms Simfonija Nr.4 II dalis",
+      "location": "Brahms_Puccini/Brahms/Simfonija Nr.4/04_II dalis.mp3"
+    },
+    {
+      "name": "Brahms Simfonija Nr.4 III dalis",
+      "location": "Brahms_Puccini/Brahms/Simfonija Nr.4/05_III dalis.mp3"
+    },
+    {
+      "name": "Brahms Simfonija Nr.4 IV dalis",
+      "location": "Brahms_Puccini/Brahms/Simfonija Nr.4/06_IV dalis.mp3"
+    },
+    {
+      "name": "Brahms Simfonija Nr.4 IV dalis (2)",
+      "location": "Brahms_Puccini/Brahms/Simfonija Nr.4/07_IV dalis (2).mp3"
+    },
+    {
+      "name": "Puccini Bohema 01 Rudolfo arija, Iv",
+      "location": "Brahms_Puccini/Puccini/Bohema/01 Rudolfo arija, Iv.mp3"
+    },
+    {
+      "name": "Puccini Bohema 02 Mimi arija Iv",
+      "location": "Brahms_Puccini/Puccini/Bohema/02 Mimi arija Iv.mp3"
+    },
+    {
+      "name": "Puccini Bohema 03 Miuzetes valsas IIv.",
+      "location": "Brahms_Puccini/Puccini/Bohema/03 Miuzetes valsas IIv..mp3"
+    },
+    {
+      "name": "Puccini Madame Butterfly_ Butterfly arija II v",
+      "location": "Brahms_Puccini/Puccini/Madame Butterfly_ Butterfly arija II v.mp3"
+    }
+  ]
+}
